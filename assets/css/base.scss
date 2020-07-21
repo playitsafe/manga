@@ -1,0 +1,20 @@
+/*============= RESETS =============*/
+
+html {
+  padding: env(safe=area-inset);
+}
+
+/*-- Prevent Horizontal Scrolling & Font Style --*/
+html, body {
+  overflow-x: hidden;
+  font-family: 'Noto Serif SC', sans-serif, serif;
+  box-sizing: border-box;
+}
+
+*, body, ul, 
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
