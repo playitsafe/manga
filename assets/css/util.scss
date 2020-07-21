@@ -11,6 +11,11 @@
   align-items: center;
 }
 
+@mixin flex-h-center {
+  display: flex;
+  justify-content: center;
+}
+
 @mixin inline-flex-center {
   display: inline-flex;
   align-items: center;
@@ -21,4 +26,10 @@
   &:hover {
     cursor: pointer;
   }
+}
+
+@mixin img-bg($url, $size, $position) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
 }

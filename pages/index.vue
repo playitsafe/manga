@@ -1,12 +1,15 @@
 <template>
   <div class="main">
-    indexx
+    <MainBanner />
   </div>
 </template>
 
 <script>
+import MainBanner from '../components/MainBanner';
 export default {
-
+  components: {
+    MainBanner
+  }
 }
 </script>
 
