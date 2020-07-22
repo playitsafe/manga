@@ -11,10 +11,15 @@ html, body {
   box-sizing: border-box;
 }
 
-*, body, ul, 
+*, body, ul, li,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
 }

@@ -115,7 +115,6 @@ export default {
           margin-bottom: auto;
 
           a {
-            text-decoration: none;
             color: black;
             &:hover {
               color: #00d564;
@@ -180,6 +179,12 @@ export default {
           border:none;
           border-width:0px;
           font-size: 13px;
+          outline: none;
+          &:focus {
+            border:none;
+            border-width:0px;
+          outline: none;
+          }
         }
 
         .btns {

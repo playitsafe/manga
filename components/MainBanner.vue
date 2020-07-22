@@ -43,7 +43,10 @@ export default {
     return {
       banners: [ '/imgs/banner1.png', '/imgs/banner2.png', '/imgs/banner3.png', '/imgs/banner4.png', '/imgs/banner5.png', '/imgs/banner6.png', '/imgs/banner7.png', '/imgs/banner8.png' ],
       swiperOptions: {
-        autoplay: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         loop: false,
         spaceBetween: 100,
         pagination: {
