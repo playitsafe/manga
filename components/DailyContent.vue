@@ -2,20 +2,30 @@
   <div class="daily-content">
     <DailyBar />
     <div>
-      <ul class="daily-content-upper">
-        <a href="#" v-for="img in dailyImgs1" :key="img">
+      <ul v-for="row in Object.keys(dailyImgs)" :key="row"
+          class="daily-content-imgrow">
+        <a href="#" v-for="img in dailyImgs[row]" :key="img.url">
+          <li class="daily-content-imgrow-grid">
+            <img :src="img.url" alt="" 
+              :style="img.type===2 ? 'width:435px' : 'width:210px'">
+          </li>
+        </a>
+      </ul>
+      <!-- <ul class="daily-content-upper">
+        <a href="#" v-for="img in dailyImgs1" :key="img.url">
           <li class="daily-content-upper-grid">
-            <img :src="img" alt="">
+            <img :src="img.url" alt="" 
+              :style="img.type===2 ? 'width:435px' : 'width:210px'">
           </li>
         </a>
       </ul>
       <ul class="daily-content-lower">
-        <a href="#" v-for="img in dailyImgs2" :key="img">
+        <a href="#" v-for="img in dailyImgs2" :key="img.url">
           <li class="daily-content-lower-grid">
             <img :src="img" alt="">
           </li>
         </a>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </template>
@@ -29,8 +39,22 @@ export default {
   },
   data() {
     return {
-      dailyImgs1: ['/imgs/x6.jpg', '/imgs/x7.jpg', '/imgs/x8.jpg', '/imgs/x9.jpg', '/imgs/x10.jpg'],
-      dailyImgs2: ['/imgs/x1.jpg', '/imgs/x2.jpg', '/imgs/x3.jpg', '/imgs/x4.jpg', '/imgs/x5.jpg']
+      dailyImgs: {
+        row1: [
+          {url:'/imgs/x6.jpg', type:1}, 
+          {url:'/imgs/x7.jpg', type:1}, 
+          {url:'/imgs/xx1.jpg', type:2}, 
+          {url:'/imgs/x8.jpg', type:1}
+        ],
+        row2: [
+          {url:'/imgs/x1.jpg', type:1}, 
+          {url:'/imgs/x2.jpg', type:1}, 
+          {url:'/imgs/x3.jpg', type:1}, 
+          {url:'/imgs/x4.jpg', type:1}, 
+          {url:'/imgs/x5.jpg', type:1}
+        ]
+      }
+      
     }
   }
 }
@@ -47,24 +71,17 @@ export default {
   align-items: center;
   height: 600px;
 
-  &-upper {
-    
-  }
-
-  &-lower{
-    margin: 15px 0 40px;
-  }
-
-  &-lower, &-upper {
+  &-imgrow {
     list-style: none;
     width: 1110px;
     display: flex;
     justify-content: space-between;
+    margin: 15px 0;
 
     &-grid {
       float: left;
       img {
-        width: 210px;
+        /* width: 210px; */
         height: 210px;
       }
     }

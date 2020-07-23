@@ -22,7 +22,7 @@ export default {
 @import '../assets/css/base.scss';
 
 .main {
-  height: 1000px;
+  /* height: 1000px; */
 }
 
 </style>
