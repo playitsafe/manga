@@ -1,41 +1,28 @@
 <template>
   <div class="daily-content">
     <DailyBar />
-    <div>
-      <ul v-for="row in Object.keys(dailyImgs)" :key="row"
-          class="daily-content-imgrow">
-        <a href="#" v-for="img in dailyImgs[row]" :key="img.url">
-          <li class="daily-content-imgrow-grid">
-            <img :src="img.url" alt="" 
-              :style="img.type===2 ? 'width:435px' : 'width:210px'">
-          </li>
-        </a>
-      </ul>
-      <!-- <ul class="daily-content-upper">
-        <a href="#" v-for="img in dailyImgs1" :key="img.url">
-          <li class="daily-content-upper-grid">
-            <img :src="img.url" alt="" 
-              :style="img.type===2 ? 'width:435px' : 'width:210px'">
-          </li>
-        </a>
-      </ul>
-      <ul class="daily-content-lower">
-        <a href="#" v-for="img in dailyImgs2" :key="img.url">
-          <li class="daily-content-lower-grid">
-            <img :src="img" alt="">
-          </li>
-        </a>
-      </ul> -->
-    </div>
+    <ImgRow v-for="row in Object.keys(dailyImgs)" :key="row"
+      :imgs="dailyImgs[row]" />
+    <!-- <ul v-for="row in Object.keys(dailyImgs)" :key="row"
+        class="daily-content-imgrow">
+      <a href="#" v-for="img in dailyImgs[row]" :key="img.url">
+        <li class="daily-content-imgrow-grid">
+          <img :src="img.url" alt="" 
+            :style="img.type===2 ? 'width:435px' : 'width:210px'">
+        </li>
+      </a>
+    </ul> -->
   </div>
 </template>
 
 <script>
 import DailyBar from '@/components/DailyBar';
+import ImgRow from '@/components/ImgRow';
 
 export default {
   components: {
-    DailyBar
+    DailyBar,
+    ImgRow
   },
   data() {
     return {
@@ -54,7 +41,6 @@ export default {
           {url:'/imgs/x5.jpg', type:1}
         ]
       }
-      
     }
   }
 }
@@ -71,20 +57,20 @@ export default {
   align-items: center;
   height: 600px;
 
-  &-imgrow {
+  /* &-imgrow {
     list-style: none;
     width: 1110px;
     display: flex;
     justify-content: space-between;
-    margin: 15px 0;
+    margin: 7.5px 0;
 
     &-grid {
       float: left;
       img {
-        /* width: 210px; */
+        // width: 210px;
         height: 210px;
       }
     }
-  }
+  } */
 }
 </style>
