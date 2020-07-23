@@ -1,17 +1,19 @@
 <template>
   <div class="main">
     <MainBanner />
-    <DailyBar />
+    <DailyContent />
   </div>
 </template>
 
 <script>
 import MainBanner from '../components/MainBanner';
-import DailyBar from '../components/DailyBar';
+// import DailyBar from '../components/DailyBar';
+import DailyContent from '../components/DailyContent';
 export default {
   components: {
     MainBanner,
-    DailyBar
+    // DailyBar,
+    DailyContent
   }
 }
 </script>

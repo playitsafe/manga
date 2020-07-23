@@ -6,9 +6,11 @@ html {
 
 /*-- Prevent Horizontal Scrolling & Font Style --*/
 html, body {
-  overflow-x: hidden;
   font-family: 'Noto Serif SC', sans-serif, serif;
   box-sizing: border-box;
+  // width:100%;
+  overflow-x:hidden;
+  overflow-y:visible;
 }
 
 *, body, ul, li,

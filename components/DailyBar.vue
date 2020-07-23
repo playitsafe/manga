@@ -27,10 +27,13 @@ export default {
 @import '@/assets/css/util.scss';
 
 .daily {
+  position: relative;
+  /* z-index: 99; */
   height: 62px;
   width: 100%;
   @include flex-h-center;
-  box-shadow: 0 10px 20px rgba(#5f5f5f, .08);
+  box-shadow: 0 10px 20px rgba(#5f5f5f, .2);
+  margin-bottom: 20px;
 
   &-inner {
     height: 100%;
