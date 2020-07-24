@@ -1,48 +1,38 @@
 <template>
   <div class="daily-content">
     <DailyBar />
-    <ImgRow v-for="row in Object.keys(dailyImgs)" :key="row"
-      :imgs="dailyImgs[row]" />
-    <!-- <ul v-for="row in Object.keys(dailyImgs)" :key="row"
-        class="daily-content-imgrow">
-      <a href="#" v-for="img in dailyImgs[row]" :key="img.url">
-        <li class="daily-content-imgrow-grid">
-          <img :src="img.url" alt="" 
-            :style="img.type===2 ? 'width:435px' : 'width:210px'">
-        </li>
-      </a>
-    </ul> -->
+    <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
+      :imgs="dailyImgs[showDay][row]" />
   </div>
 </template>
 
 <script>
 import DailyBar from '@/components/DailyBar';
 import ImgRow from '@/components/ImgRow';
+//import dailyImgs from '@/assets/rawData/imgs';
 
 export default {
+  props: {
+    dailyImgs: Array
+  },
   components: {
     DailyBar,
-    ImgRow
+    // ImgRow
   },
   data() {
     return {
-      dailyImgs: {
-        row1: [
-          {url:'/imgs/x6.jpg', type:1}, 
-          {url:'/imgs/x7.jpg', type:1}, 
-          {url:'/imgs/xx1.jpg', type:2}, 
-          {url:'/imgs/x8.jpg', type:1}
-        ],
-        row2: [
-          {url:'/imgs/x1.jpg', type:1}, 
-          {url:'/imgs/x2.jpg', type:1}, 
-          {url:'/imgs/x3.jpg', type:1}, 
-          {url:'/imgs/x4.jpg', type:1}, 
-          {url:'/imgs/x5.jpg', type:1}
-        ]
-      }
+      showDay: new Date().getDay() - 1,
+      // dailyImgs: []
     }
+  },
+  computed: {
+    
+  },
+  mounted() {
+    // console.log('propday',this.dailyImgs)
+
   }
+
 }
 </script>
 

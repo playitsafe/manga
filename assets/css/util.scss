@@ -33,3 +33,13 @@
   background-size: $size;
   background-position: $position;
 }
+
+@mixin visibility-none {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin visibility-show {
+  visibility: visible;
+  opacity: 1;
+}

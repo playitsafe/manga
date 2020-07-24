@@ -91,7 +91,7 @@ export default {
 
   &-inner {
     height: 492px;
-    width: 1110px;
+    min-width: 1110px;
     position: relative;
 
     &-big {
