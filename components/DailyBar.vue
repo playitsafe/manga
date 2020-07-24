@@ -2,13 +2,11 @@
   <div class="daily">
     <div class="daily-inner">
       <ul class="daily-inner-days">
-        <a href="#"><li>周一</li></a>
-        <a href="#"><li>周二</li></a>
-        <a href="#"><li>周三</li></a>
-        <a href="#"><li>周四</li></a>
-        <a href="#"><li>周五</li></a>
-        <a href="#"><li>周六</li></a>
-        <a href="#"><li>周日</li></a>
+        <li v-for="(day, i) in days" :key="i" 
+          @click="$emit('changeDayImg', i)"
+          :class="{'daily-inner-days-active': i === showDay}">
+          {{day}}
+        </li>
       </ul>
       <div class="daily-inner-more">
         <a href="#">查看更多</a>
@@ -19,7 +17,22 @@
 
 <script>
 export default {
-
+  props: {
+    showDay: Number
+  },
+  data() {
+    return {
+      days: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+    }
+  },
+  methods: {
+    // onClickDay(i, e){
+    //   console.log('e',e.target)
+    //   console.log('ev',event.target)
+    //   console.log('i',i)
+    //   this.$emit('changeDayImg', i)
+    // }
+  }
 }
 </script>
 
@@ -34,6 +47,7 @@ export default {
   @include flex-h-center;
   box-shadow: 0 10px 20px rgba(#5f5f5f, .2);
   margin-bottom: 20px;
+  background: #fff;
 
   &-inner {
     height: 100%;
@@ -50,17 +64,23 @@ export default {
       display: flex;
       justify-content: center;
 
-      a:hover {
+      &-active {
         background: #44e013;
-        color: #fff;
       }
 
       li {
+        color: black;
         float: left;
         height: 100%;
         /* margin: ; */
         padding: 0 30px;
         @include flex-v-center;
+        &:hover {
+          cursor: pointer;
+          background: #b4f2a0;
+          /* background: #44e013; */
+
+        }
       }
 
     }

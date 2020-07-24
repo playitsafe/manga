@@ -1,6 +1,6 @@
 <template>
   <div class="daily-content">
-    <DailyBar />
+    <DailyBar :showDay="showDay" @changeDayImg="showDay = $event" />
     <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
       :imgs="dailyImgs[showDay][row]" />
   </div>
@@ -18,6 +18,11 @@ export default {
   components: {
     DailyBar,
     // ImgRow
+  },
+  methods: {
+    // changeShowDay(day) {
+    //   this.showDay =
+    // }
   },
   data() {
     return {
