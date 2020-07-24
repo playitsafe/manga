@@ -24,6 +24,13 @@ export default {
   asyncData() {
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     let imgArray = [];
+    /*
+    Imgs: {
+      Mon: {row1:[], row2:[]}
+      ...
+      Sun: {row1:[], row2:[]}
+    }
+    */
     for (let i = 0; i < days.length; i++) {
       for (let imgDayKey in Imgs.dailyImgs) {
         if (imgDayKey === days[i]) {
@@ -31,7 +38,16 @@ export default {
         }
       }
     }
-    // console.log('imgArr',imgArray)
+    // imgArray: [{row1:[],row2:[]},...,{}]
+    const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
+    for (let i = 0; i < imgArray.length; i++) {
+      for (let row in imgArray[i]) {
+        for (let j = 0; j < imgArray[i][row].length; j++) {
+          let randomIndex = Math.floor(Math.random() * colors.length);
+          imgArray[i][row][j].color = colors[randomIndex];
+        }
+      }
+    }
     return {
       dailyImgs: imgArray
     }

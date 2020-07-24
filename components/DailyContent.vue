@@ -45,12 +45,13 @@ export default {
 @import '@/assets/css/util.scss';
 .daily-content {
   background: #f4f4f4;
-  border-bottom: 1px solid #f1f1f1;
+  border-bottom: 1px solid #c2c2c2;
   // @include flex-h-center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
+  padding-bottom: 30px;
+  /* height: 555px; */
 
   /* &-imgrow {
     list-style: none;
