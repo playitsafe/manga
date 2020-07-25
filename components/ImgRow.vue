@@ -1,6 +1,6 @@
 <template>
   <ul class="img-row">
-    <a href="#" v-for="(img) in imgs" :key="img.url">
+    <a href="#" v-for="img in imgs" :key="img.url">
       <li class="img-row-grid"
         :style="img.type===2 ? 'width:435px' : 'width:210px'">
         <div class="mg-row-grid-front">
@@ -11,7 +11,7 @@
           <!-- :style="`background: ${getColors(imgs.length)[i]}`"> -->
         </div>
         <div class="img-row-grid-info">
-          <h5>{{img.title}}</h5>
+          <h5 :style="img.type===2 ? 'color:#fff' : ''">{{img.title}}</h5>
           <p class="img-row-grid-info-author">
             {{img.author}}
             <span class="img-row-grid-info-author-border"></span>
@@ -24,6 +24,7 @@
           <span class="img-row-grid-info-likes">{{img.likes}}万</span>
           <div class="img-row-grid-info-icongroup">
             <div class="img-row-grid-info-icongroup-new" v-show="img.isNew">新</div>
+            <div class="img-row-grid-info-icongroup-ended" v-show="img.ended">完</div>
             <div class="img-row-grid-info-icongroup-updated" v-show="img.isUpdated">更新</div>
           </div>
           <span class="img-row-grid-info-category"
@@ -113,6 +114,7 @@ export default {
         h5 {
           font-size: 18px;
           font-weight: 700;
+          color: black;
         }
 
         i, &-likes {
@@ -124,6 +126,21 @@ export default {
           display: flex;
           &-new {
             background: black;
+            color: #44e013;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+            margin-top: 5px;
+            margin-left: -3px;
+            margin-right: 6px;
+          }
+
+          &-ended {
+            background: #ebebeb;
             color: #44e013;
             font-size: 16px;
             font-weight: 700;
@@ -152,7 +169,6 @@ export default {
           }
 
         }
-
 
         &-category {
           position: absolute;
@@ -194,7 +210,7 @@ export default {
       }
 
       &:hover &-info {
-        i, &-likes, &-updated, &-category, &-intro4lg {
+        i, &-likes, &-icongroup-updated, &-icongroup-new, &-icongroup-ended, &-category, &-intro4lg {
           @include visibility-none;
         }
         h5 {

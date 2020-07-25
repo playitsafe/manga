@@ -60,6 +60,8 @@ export default {
       }
     }
 
+    console.log('daiulyy', dailyImgArray)
+
     // get newImg data
     let newImgArray = [];
     for (let newImgKey in Imgs.newImgs) {
@@ -91,9 +93,4 @@ export default {
 
 <style lang="scss">
 @import '../assets/css/base.scss';
-
-.main {
-  /* height: 1000px; */
-}
-
 </style>

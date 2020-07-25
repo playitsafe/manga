@@ -111,11 +111,6 @@ export default {
           width: 12px;
           height: 12px;
           background: #fff;
-
-
-          &-active {
-            /* background: #fff; */
-          }
         }
       }
     }

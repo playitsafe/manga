@@ -17,7 +17,7 @@ export default {
   },
   components: {
     DailyBar,
-    // ImgRow
+    ImgRow
   },
   methods: {
     // changeShowDay(day) {
@@ -30,14 +30,9 @@ export default {
       // dailyImgs: []
     }
   },
-  computed: {
-    
-  },
   mounted() {
-    // console.log('propday',this.dailyImgs)
-
+    console.log('this.dailyImgs',this.dailyImgs)
   }
-
 }
 </script>
 
