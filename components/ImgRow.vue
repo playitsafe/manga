@@ -16,10 +16,10 @@
             {{img.author}}
             <span class="img-row-grid-info-author-border"></span>
           </p>
-          <p class="img-row-grid-info-intro4lg" v-show="img.type===2">
+          <p class="img-row-grid-info-intro4lg" v-show="img.type===2 && showIntro">
             {{img.intro}}
           </p>
-          <p class="img-row-grid-info-intro">{{img.intro}}</p>
+          <p class="img-row-grid-info-intro" v-show="showIntro">{{img.intro}}</p>
           <i class="fas fa-thumbs-up"></i>
           <span class="img-row-grid-info-likes">{{img.likes}}万</span>
           <div class="img-row-grid-info-icongroup">
@@ -41,8 +41,8 @@
 <script>
 export default {
   props: {
-    // [ {},...,{} ]
-    imgs: Array
+    imgs: Array,// [ {},...,{} ]
+    showIntro: { type: Boolean, default: true }
   }
 }
 </script>
@@ -52,15 +52,16 @@ export default {
 
 .img-row {
     list-style: none;
-    width: 1110px;
+    /* width: 1110px; */
     display: flex;
     justify-content: space-between;
-    margin: 7.5px 0;
+    margin-top: 15px;
 
     &-grid {
       float: left;
       position: relative;
       height: 210px;
+      /* margin: 7.5px; */
       /* transition: all ease .3s; */
         
 

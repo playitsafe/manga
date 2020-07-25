@@ -1,8 +1,10 @@
 <template>
   <div class="daily-content">
     <DailyBar :showDay="showDay" @changeDayImg="showDay = $event" />
-    <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
-      :imgs="dailyImgs[showDay][row]" />
+    <div class="daily-content-wrap">
+      <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
+        :imgs="dailyImgs[showDay][row]" />
+    </div>
   </div>
 </template>
 
@@ -35,5 +37,9 @@ export default {
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
+
+  &-wrap {
+    width: 1110px;
+  }
 }
 </style>

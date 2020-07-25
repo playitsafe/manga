@@ -3,6 +3,7 @@
     <MainBanner />
     <DailyContent :dailyImgs="dailyImgs" />
     <NewContent :newImgs="newImgs" />
+    <CategoryContent :categoryImgs="categoryImgs" />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import MainBanner from '@/components/MainBanner';
 import DailyContent from '@/components/DailyContent';
 import NewContent from '@/components/NewContent';
+import CategoryContent from '@/components/CategoryContent';
 
 import Imgs from '@/assets/rawData/imgs';
 /*
@@ -28,11 +30,13 @@ export default {
     MainBanner,
     DailyContent,
     NewContent,
+    CategoryContent
   },
   data() {
     return {
       dailyImgs: [],
-      newImgs: []
+      newImgs: [],
+      categoryImgs: []
     }
   },
   asyncData() {
@@ -80,9 +84,25 @@ export default {
       }
     }
 
+    //get categoryImgs
+    let cateImgs = [];
+
+    // get categoryData 
+    for(let key in Imgs.categoryImgs) {
+      let randomIndex = Math.floor(Math.random() * colors.length);
+      for(let img of Imgs.categoryImgs[key].imgs) {
+        img.color = colors[randomIndex];
+      }
+      cateImgs.push(Imgs.categoryImgs[key]);
+    }
+
+    //cateImgs:
+    // [{cateTitle:'', category:'', imgs:[]}, {}]
+
     return {
       dailyImgs: dailyImgArray,
-      newImgs: newImgArray
+      newImgs: newImgArray,
+      categoryImgs: cateImgs
     }
   }
 }

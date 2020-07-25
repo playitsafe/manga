@@ -905,7 +905,8 @@ export default {
 
   categoryImgs: {
     young: {
-      intro: '青春、热血还有战斗',
+      categoryTitle: '青春、热血还有战斗',
+      category: '少年',
       imgs: [
         {
           url:'/imgs/x1.jpg',
@@ -915,7 +916,7 @@ export default {
           isUpdated:false,
           isNew: false,
           ended: true,
-          category: '悬疑',
+          category: '少年',
           author: '李惠',
           intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
         },
@@ -927,7 +928,7 @@ export default {
           isUpdated:false,
           isNew: false,
           ended: true,
-          category: '悬疑',
+          category: '少年',
           author: '李惠',
           intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
         },
@@ -958,7 +959,8 @@ export default {
       ]
     },
     acient: {
-      intro: '公子，余生请多指教',
+      categoryTitle: '公子，余生请多指教',
+      category: '古风',
       imgs: [
         {
           url:'/imgs/x7.jpg',
@@ -968,7 +970,7 @@ export default {
           isUpdated:false,
           isNew: false,
           ended: true,
-          category: '悬疑',
+          category: '古风',
           author: '李惠',
           intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
         },
@@ -980,7 +982,7 @@ export default {
           isUpdated:false,
           isNew: false,
           ended: true,
-          category: '悬疑',
+          category: '古风',
           author: '李惠',
           intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
         },
@@ -992,7 +994,7 @@ export default {
           isUpdated:false,
           isNew: false,
           ended: true,
-          category: '悬疑',
+          category: '古风',
           author: '李惠',
           intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
         },
