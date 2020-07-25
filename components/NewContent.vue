@@ -87,7 +87,7 @@ export default {
     text-align: center;
     font-size: 22px;
     font-weight: 700;
-    padding: 30px 0;
+    padding-top: 30px;
   }
 
   &-carousel {
@@ -98,46 +98,18 @@ export default {
     .swiper-container {
       width: 1110px;
       /* overflow: visible; */
-    padding-bottom: 35px;
+      padding: 30px 0;
     }
 
     .swiper-button-prev, .swiper-button-next {
-      
       outline: none;
       color: #acacac;
 
       &:hover {
         color: #44e013;
       }
-      /* &::after {
-        width: 15px;
-        height: 24px;
-
-      } */
-
-      /* position: absolute; */
-      /* left: -20px; */
-      /* transform: translateX(-100%); */
-
     }
 
-    /* .swiper-container {
-      padding-bottom: 30px;
-
-      .swiper-pagination {
-        position: absolute;
-        bottom: 0px;
-        
-        &-bullet {
-          height: 10px;
-          width: 10px;
-
-          &-active {
-            background: #000000;
-          }
-        }
-      }
-    } */
     .swiper-pagination {
       position: absolute;
       bottom: 0px;

@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import MainBanner from '../components/MainBanner';
-import DailyContent from '../components/DailyContent';
-import NewContent from '../components/NewContent';
+import MainBanner from '@/components/MainBanner';
+import DailyContent from '@/components/DailyContent';
+import NewContent from '@/components/NewContent';
 
 import Imgs from '@/assets/rawData/imgs';
 /*
@@ -36,8 +36,6 @@ export default {
     }
   },
   asyncData() {
-    //console.log('Imgs', Imgs)
-
     // get dailyImg data
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     let dailyImgArray = [];
@@ -60,7 +58,6 @@ export default {
       }
     }
 
-    console.log('daiulyy', dailyImgArray)
 
     // get newImg data
     let newImgArray = [];

@@ -9,7 +9,6 @@
 <script>
 import DailyBar from '@/components/DailyBar';
 import ImgRow from '@/components/ImgRow';
-//import dailyImgs from '@/assets/rawData/imgs';
 
 export default {
   props: {
@@ -19,19 +18,10 @@ export default {
     DailyBar,
     ImgRow
   },
-  methods: {
-    // changeShowDay(day) {
-    //   this.showDay =
-    // }
-  },
   data() {
     return {
-      showDay: new Date().getDay() - 1,
-      // dailyImgs: []
+      showDay: new Date().getDay()
     }
-  },
-  mounted() {
-    console.log('this.dailyImgs',this.dailyImgs)
   }
 }
 </script>
@@ -41,27 +31,9 @@ export default {
 .daily-content {
   background: #f4f4f4;
   border-bottom: 1px solid #c2c2c2;
-  // @include flex-h-center;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
-  /* height: 555px; */
-
-  /* &-imgrow {
-    list-style: none;
-    width: 1110px;
-    display: flex;
-    justify-content: space-between;
-    margin: 7.5px 0;
-
-    &-grid {
-      float: left;
-      img {
-        // width: 210px;
-        height: 210px;
-      }
-    }
-  } */
 }
 </style>

@@ -3,7 +3,7 @@
     <a href="#" v-for="img in imgs" :key="img.url">
       <li class="img-row-grid"
         :style="img.type===2 ? 'width:435px' : 'width:210px'">
-        <div class="mg-row-grid-front">
+        <div class="img-row-grid-front">
           <img :src="img.url" alt="">
         </div>
         <div class="img-row-grid-back"
@@ -43,11 +43,6 @@ export default {
   props: {
     // [ {},...,{} ]
     imgs: Array
-  },
-  data() {
-    return {
-      //bgColors: ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f']
-    }
   }
 }
 </script>
@@ -67,11 +62,8 @@ export default {
       position: relative;
       height: 210px;
       /* transition: all ease .3s; */
-      img {
-        /* width: 210px; */
-        height: 100%;
-        width: 100%;
-      }
+        
+
       &:hover &-front {
         @include visibility-none;
         /* transition: all ease .3s; */
@@ -86,9 +78,15 @@ export default {
         position: absolute;
         top: 0;
         left: 0;
+        height: 100%;
+        width: 100%;
         @include visibility-show;
         transition: all ease .2s;
-        
+        img {
+          /* width: 210px; */
+          height: 100%;
+          width: 100%;
+        }
       }
 
       &-back {
