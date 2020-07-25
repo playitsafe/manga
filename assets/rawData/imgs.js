@@ -735,5 +735,101 @@ export default {
         }
       ]
     }
+  },
+
+  newImgs: {
+    page1: [
+      {
+        url:'/imgs/x1.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:false,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/x2.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:true,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/x3.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:true,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/xx1.jpg',
+        type:2,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:false,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }
+    ],
+    page2: [
+      {
+        url:'/imgs/x5.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:true,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/x6.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:false,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/xx2.jpg',
+        type:2,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:false,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }, 
+      {
+        url:'/imgs/x7.jpg',
+        type:1,
+        title: '谎言的世界',
+        likes:Math.ceil(Math.random()*10000),
+        isUpdated:false,
+        isNew: true,
+        category: '悬疑',
+        author: '李惠',
+        intro: '拥有逆天颜值的女神任晶晶，走在大街上永远是焦点所在，谁曾想到，她也有丑小鸭一样灰暗平庸的过去，她是如何逆流而上，成为不动刀的女神，秘密就在这里……'
+      }
+    ]
   }
+  
 }

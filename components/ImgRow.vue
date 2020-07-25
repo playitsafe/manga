@@ -22,8 +22,9 @@
           <p class="img-row-grid-info-intro">{{img.intro}}</p>
           <i class="fas fa-thumbs-up"></i>
           <span class="img-row-grid-info-likes">{{img.likes}}万</span>
-          <div class="img-row-grid-info-updated">
-            更新
+          <div class="img-row-grid-info-icongroup">
+            <div class="img-row-grid-info-icongroup-new" v-show="img.isNew">新</div>
+            <div class="img-row-grid-info-icongroup-updated" v-show="img.isUpdated">更新</div>
           </div>
           <span class="img-row-grid-info-category"
             :style="`color: ${img.color}`">
@@ -39,27 +40,14 @@
 <script>
 export default {
   props: {
+    // [ {},...,{} ]
     imgs: Array
   },
   data() {
     return {
       //bgColors: ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f']
     }
-  },
-  methods: {
-    // getColors(imgsLength) {
-    //   let colors = [...this.bgColors];
-    //   // shuffle array colors
-    //   for (let i = colors.length-1; i > 0; i--) {
-    //     let j = Math.floor(Math.random() * (i + 1));
-    //     [colors[i], colors[j]] = [colors[j], colors[i]];
-    //   }
-    //   return colors.slice(0,imgsLength);
-    // }
-  },
-  mounted() {
   }
-
 }
 </script>
 
@@ -132,19 +120,39 @@ export default {
           font-size: 14px;
         }
 
-        &-updated {
-          background: #44e013;
-          color: #fff;
-          font-size: 10px;
-          text-align: center;
-          /* @include flex-h-center; */
-          width: 30px;
-          height: 30px;
-          line-height: 30px;
-          border-radius: 15px;
-          margin-top: 5px;
-          margin-left: -3px;
+        &-icongroup {
+          display: flex;
+          &-new {
+            background: black;
+            color: #44e013;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+            margin-top: 5px;
+            margin-left: -3px;
+            margin-right: 6px;
+          }
+
+          &-updated {
+            background: #44e013;
+            color: #fff;
+            font-size: 10px;
+            text-align: center;
+            /* @include flex-h-center; */
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 15px;
+            margin-top: 5px;
+            margin-left: -3px;
+          }
+
         }
+
 
         &-category {
           position: absolute;
