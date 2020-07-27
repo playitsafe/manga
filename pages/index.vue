@@ -4,6 +4,7 @@
     <DailyContent :dailyImgs="dailyImgs" />
     <NewContent :newImgs="newImgs" />
     <CategoryContent :categoryImgs="categoryImgs" />
+    <RankContent :rankings="rankings" />
   </div>
 </template>
 
@@ -12,8 +13,10 @@ import MainBanner from '@/components/MainBanner';
 import DailyContent from '@/components/DailyContent';
 import NewContent from '@/components/NewContent';
 import CategoryContent from '@/components/CategoryContent';
+import RankContent from '@/components/RankContent';
 
 import Imgs from '@/assets/rawData/imgs';
+import { rankings } from '@/assets/rawData/rank';
 /*
 console.log(Imgs)
 {
@@ -30,15 +33,20 @@ export default {
     MainBanner,
     DailyContent,
     NewContent,
-    CategoryContent
+    CategoryContent,
+    RankContent
   },
   data() {
     return {
       dailyImgs: [],
       newImgs: [],
-      categoryImgs: []
+      categoryImgs: [],
+      rankings: {}
     }
   },
+  // mounted() {
+  //   console.log('rankings', rankings)
+  // },
   asyncData() {
     // get dailyImg data
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -99,10 +107,32 @@ export default {
     //cateImgs:
     // [{cateTitle:'', category:'', imgs:[]}, {}]
 
+    //add color to rankings
+    for(let cate in rankings) {
+      for(let key in rankings[cate]) {
+        let randomIndex = Math.floor(Math.random() * colors.length);
+        rankings[cate][key].color = colors[randomIndex];
+      }
+    }
+
+    // console.log(rankings)
+
+    //rankings
+    // {
+    //   beCategory:{
+    //     love: {category: '', rank: [{},...{}]}
+    //     ...
+    //   },
+    //   byAge: {
+    //     m10: {}
+    //   }
+    // }
+
     return {
       dailyImgs: dailyImgArray,
       newImgs: newImgArray,
-      categoryImgs: cateImgs
+      categoryImgs: cateImgs,
+      rankings
     }
   }
 }
