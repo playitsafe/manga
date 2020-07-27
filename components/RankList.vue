@@ -8,7 +8,8 @@
         </h3>
       </a>
 
-      <span class="rank-wrap-head-select" @click="toggleDropdown">
+      <span class="rank-wrap-head-select" @click="toggleDropdown"
+        :id="`rank-dropdown-btn-${rankType}`">
         {{ranking[Object.keys(ranking)[0]].category}}
         <i class="fas fa-chevron-down"></i>
       </span>
@@ -21,8 +22,6 @@
         </li>
       </ul>
     </div>
-
-
     <ul class="rank-wrap-lists">
       <a href="#" v-for="(rk,i) in currentRank.rank" :key="i">
         <li class="rank-wrap-lists-item">
@@ -41,8 +40,6 @@
         </li>
       </a>
     </ul>
-    
-    
   </div>
 </template>
 
@@ -69,7 +66,18 @@ export default {
       
       // this.currentRank = 0;
     },
-    toggleDropdown(element) {
+    listenHandler(e) {
+      console.log('listening')
+      let clickedInDropDownBox = document.getElementById(`rank-dropdown-${this.rankType}`).contains(e.target);
+      let clickOnBtn = document.getElementById(`rank-dropdown-btn-${this.rankType}`).contains(e.target);
+
+      if (!clickedInDropDownBox && !clickOnBtn) {
+        e.stopPropagation()
+        window.removeEventListener('click', this.listenHandler);
+        this.showDropdown = false;
+      }
+    },
+    toggleDropdown() {
       //let clickListener = window.addEventListener(document.get)
       // e.stopPropagation() // this will stop propagation of this event to upper level
       // this.showDropdown = !this.showDropdown;
@@ -82,32 +90,30 @@ export default {
       //     this.showDropdown = false
       //   })
       // }
-      let self = this;
+      // let self = this;
 
-      function handler(e) {
-        console.log('listening')
-        let clickedInDropDownBox = document.getElementById(`rank-dropdown-${self.rankType}`).contains(e.target);
-        let clickOnBtn = element.target.contains(e.target);
+      // function handler(e) {
+      //   console.log('listening')
+      //   let clickedInDropDownBox = document.getElementById(`rank-dropdown-${self.rankType}`).contains(e.target);
+      //   let clickOnBtn = element.target.contains(e.target);
 
-        if (!clickedInDropDownBox && !clickOnBtn) {
-          e.stopPropagation()
-          window.removeEventListener('click', handler);
-          self.showDropdown = false;
-        }
-      }
+      //   if (!clickedInDropDownBox && !clickOnBtn) {
+      //     e.stopPropagation()
+      //     window.removeEventListener('click', handler);
+      //     self.showDropdown = false;
+      //   }
+      // }
       
-      if (self.showDropdown) {
-        window.removeEventListener('click', handler);
-        self.showDropdown = false;
+      if (this.showDropdown) {
+        window.removeEventListener('click', this.listenHandler);
+        this.showDropdown = false;
       } else {
         //if dropdown is close
-        self.showDropdown = true;
-        window.addEventListener('click', handler);
+        this.showDropdown = true;
+        window.addEventListener('click', this.listenHandler);
       }
     }
   }
-
-
 }
 </script>
 
@@ -169,6 +175,10 @@ export default {
         text-align: center;
         flex-shrink: 0;
         flex-basis: 160px;
+        cursor: pointer;
+        &:hover {
+          font-weight: 700;
+        }
       }
 
       .colx2 {
