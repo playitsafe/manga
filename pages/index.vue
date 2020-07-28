@@ -6,6 +6,7 @@
     <CategoryContent :categoryImgs="categoryImgs" />
     <RankContent :rankings="rankings" />
     <Footer />
+    <SideDrawer />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import NewContent from '@/components/NewContent';
 import CategoryContent from '@/components/CategoryContent';
 import RankContent from '@/components/RankContent';
 import Footer from '@/components/Footer';
+import SideDrawer from '@/components/SideDrawer';
 
 import Imgs from '@/assets/rawData/imgs';
 import { rankings } from '@/assets/rawData/rank';
@@ -37,7 +39,8 @@ export default {
     NewContent,
     CategoryContent,
     RankContent,
-    Footer
+    Footer,
+    SideDrawer
   },
   data() {
     return {
