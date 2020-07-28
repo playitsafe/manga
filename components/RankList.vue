@@ -17,7 +17,8 @@
         :id="`rank-dropdown-${rankType}`">
         <li class="rank-wrap-head-dropdown-item"
           v-for="(cate,i) in categories" :key="i"
-          :class="{ colx2: categories.length > 6}">
+          :class="{ colx2: categories.length > 6 }"
+          @click="onSelectCategory(cate)">
           {{cate}}
         </li>
       </ul>
@@ -62,9 +63,12 @@ export default {
   //   console.log('rankingggg',this.ranking)
   // },
   methods: {
-    selectRankType(category) {
-      
-      // this.currentRank = 0;
+    onSelectCategory(cate) {
+      let selectedKey = Object.keys(this.ranking).filter((key) => this.ranking[key].category === cate);
+      this.currentRank = this.ranking[selectedKey];
+      this.showDropdown = false;
+      window.removeEventListener('click', this.listenHandler);
+
     },
     listenHandler(e) {
       console.log('listening')
