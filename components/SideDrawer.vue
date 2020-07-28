@@ -1,11 +1,11 @@
 <template>
   <div class="sidedrawer" :class="{hide: showSideBar}">
     <div class="sidedrawer-btn" @click="showSideBar = !showSideBar">
-      <div class="sidedrawer-btn-closed" v-show="showSideBar">
+      <div class="sidedrawer-btn-closed" v-show="!showSideBar">
         <span>最近观看</span>
         <i class="fas fa-chevron-down"></i>
       </div>
-      <div class="sidedrawer-btn-open" v-show="!showSideBar">
+      <div class="sidedrawer-btn-open" v-show="showSideBar">
         <i class="fas fa-chevron-up"></i>
       </div>
     </div>
@@ -50,12 +50,12 @@ export default {
   /* position: fixed;
   right: 0;
   display: flex; */
-  transform: translateX(0);
+  transform: translateX(115px);
   transition: transform ease .2s;
 
   
   &.hide {
-    transform: translateX(115px);
+  transform: translateX(0);
   }
   
   &-btn {

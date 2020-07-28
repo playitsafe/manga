@@ -128,7 +128,7 @@ export default {
       align-items: center;
 
       &-code {
-        @include img-bg('/imgs/qr.png', contain, no-repeat);
+        @include img-bg('/imgs/qr.png', cover, no-repeat);
         /* background-size: ; */
         width: 391px;
         height: 93px;
