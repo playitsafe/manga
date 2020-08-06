@@ -12,10 +12,15 @@
 import DailyBar from '@/components/DailyBar';
 import ImgRow from '@/components/ImgRow';
 
+import { state, mapGetters } from 'vuex';
+
 export default {
-  props: {
-    dailyImgs: Array
-  },
+  // props: {
+    // [
+    //   {row1:[],row2:[]},...{}
+    // ]
+  //   dailyImgs: Array
+  // },
   components: {
     DailyBar,
     ImgRow
@@ -24,6 +29,11 @@ export default {
     return {
       showDay: new Date().getDay()
     }
+  },
+  computed: {
+    ...mapGetters({
+      dailyImgs: 'home/getDailyImgsArray'
+    })
   }
 }
 </script>

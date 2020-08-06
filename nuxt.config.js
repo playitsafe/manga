@@ -70,7 +70,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'https://www.fastmock.site/mock/9b87a85e81beae86ed808b0dedf24d69/manga'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

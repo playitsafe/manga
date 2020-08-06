@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <MainBanner />
-    <DailyContent :dailyImgs="dailyImgs" />
+    <DailyContent />
     <NewContent :newImgs="newImgs" />
     <CategoryContent :categoryImgs="categoryImgs" />
     <RankContent :rankings="rankings" />
@@ -56,6 +56,7 @@ export default {
   asyncData() {
     // get dailyImg data
     const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    
     let dailyImgArray = [];
     for (let i = 0; i < days.length; i++) {
       for (let imgDayKey in Imgs.dailyImgs) {
