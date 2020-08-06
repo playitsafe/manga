@@ -20,20 +20,25 @@
         </div>
       </div>
     </div>
-    
   </div>
 </template>
 
 <script>
 import ImgRow from '@/components/ImgRow';
+import { mapState } from 'vuex';
 
 export default {
-  props: {
+  //props: {
     // [{cateTitle:'', category:'', imgs:[]}, {}]
-    categoryImgs: Array
-  },
+  //   categoryImgs: Array
+  // },
   components: {
     ImgRow
+  },
+  computed: {
+    ...mapState({
+      categoryImgs: state => state.home.categoryImgs
+    })
   }
 }
 </script>

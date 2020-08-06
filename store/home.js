@@ -1,4 +1,5 @@
 export const state = () => ({
+  mainBanners: [],
   dailyImgs: [],
   newImgs: [],
   categoryImgs: [],
@@ -6,6 +7,9 @@ export const state = () => ({
 })
 
 export const mutations = {
+  setMainBanners(state, val) {
+    state.mainBanners = val;
+  },
   setDailyImgs(state, val) {
     state.dailyImgs = val;
   },
@@ -21,6 +25,9 @@ export const mutations = {
 }
 
 export const actions = {
+  setMainBanners: ({ commit }, mainBanners) => {
+    commit('setMainBanners', mainBanners);
+  },
   setDailyImgs: ({ commit }, dailyImgs) => {
     commit('setDailyImgs', dailyImgs);
   },

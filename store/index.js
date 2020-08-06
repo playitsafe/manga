@@ -1,4 +1,4 @@
-import { getDailyContentArray } from '@/utils';
+import { getDailyContentArray, getNewContentArray, getCategoryArray, addColor } from '@/utils';
 
 export const state = () => ({
   
@@ -13,45 +13,34 @@ export const actions = {
     let { commit } = store;
     let { req, app } = ctx;
 
-    //***get daily contents
-    // {
-    //   Mon: {row1:[], row2:[]}
-    // }
-    // ===
-    // [
-    //   {row1:[],row2:[]},...{}
-    // ]
-    const { status, data } = await app.$axios.get('/dailyImgs');
-    // commit('home/setDailyImgs', status === 200 ? data : {});
+    //***get main banner swiper */
+    const { status, data: {banners} } = await app.$axios.get('/mainBanner');
+    commit('home/setMainBanners', status === 200 ? banners : []);
 
-    // const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
-    // const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    //***get daily content */
+    const { status:status2, data } = await app.$axios.get('/dailyImgs');
 
-    // let dailyImgArray = [];
-    // if (status === 200) {
-    //   for (let i = 0; i < days.length; i++) {
-    //     for (let imgDayKey in data) {
-    //       if (imgDayKey === days[i]) {
-    //         dailyImgArray.push(data[imgDayKey]);
-    //       }
-    //     }
-    //   }
-    // }
-
-    // for (let i = 0; i < dailyImgArray.length; i++) {
-    //   for (let row in dailyImgArray[i]) {
-    //     for (let j = 0; j < dailyImgArray[i][row].length; j++) {
-    //       let randomIndex = Math.floor(Math.random() * colors.length);
-    //       dailyImgArray[i][row][j].color = colors[randomIndex];
-    //     }
-    //   }
-    // }
-
-    if (status === 200) {
+    if (status2 === 200) {
       commit('home/setDailyImgs', getDailyContentArray(data));
     }
     
     //***get latest content */
+    const { status:status3, data:newImgs } = await app.$axios.get('/latest');
+    if (status3 === 200) {
+      commit('home/setNewImgs', getNewContentArray(newImgs));
+    }
+
+    //***get category content */
+    const { status:status4, data:cateImgs } = await app.$axios.get('/categoryImgs');
+    if (status4 === 200) {
+      commit('home/setCategoryImgs', getCategoryArray(cateImgs));
+    }
+
+    //***get rank content */
+    const { status:status5, data:rankImgs } = await app.$axios.get('/rank');
+    if (status5 === 200) {
+      commit('home/setRankings', addColor(rankImgs));
+    }
 
 
   }

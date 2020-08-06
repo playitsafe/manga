@@ -12,9 +12,9 @@
       </div> -->
       <div class="main-banner-inner-big">
         <Swiper ref="mySwiper" :options="swiperOptions">
-          <SwiperSlide v-for="banner in banners" :key="banner">
-            <a href="#">
-              <img :src="banner" alt="">
+          <SwiperSlide v-for="banner in banners" :key="banner.url">
+            <a :href="banner.link">
+              <img :src="banner.url" alt="">
             </a>
           </SwiperSlide>
           <div class="swiper-pagination" slot="pagination"></div>
@@ -30,6 +30,8 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.min.css';
 
+import { mapState } from 'vuex';
+
 export default {
   components: {
     Swiper,
@@ -41,7 +43,7 @@ export default {
 
   data() {
     return {
-      banners: [ '/imgs/banner1.png', '/imgs/banner2.png', '/imgs/banner3.png', '/imgs/banner4.png', '/imgs/banner5.png', '/imgs/banner6.png', '/imgs/banner7.png', '/imgs/banner8.png' ],
+      // banners: [ '/imgs/banner1.png', '/imgs/banner2.png', '/imgs/banner3.png', '/imgs/banner4.png', '/imgs/banner5.png', '/imgs/banner6.png', '/imgs/banner7.png', '/imgs/banner8.png' ],
       swiperOptions: {
         autoplay: {
           delay: 3000,
@@ -56,24 +58,18 @@ export default {
         effect: 'fade',
         fadeEffect: {
           crossFade: true
-        },
-        // navigation: {
-        //   nextEl: '.swiper-button-next',
-        //   prevEl: '.swiper-button-prev',
-        // },
+        }
       }
     }
   },
   computed: {
+    ...mapState({
+      banners: state => state.home.mainBanners
+    }),
     swiper() {
       return this.$refs.mySwiper.$swiper
     }
-  },
-  mounted() {
-    console.log('Current Swiper instance object', this.swiper);
-    // this.swiper.slideTo(3, 1000, false);
   }
-
 }
 </script>
 
@@ -135,8 +131,6 @@ export default {
       right: 0;
       @include img-bg('/imgs/corner2.png', cover, center);
     }
-
-
   }
 }
 </style>

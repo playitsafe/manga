@@ -2,9 +2,9 @@
   <div class="main">
     <MainBanner />
     <DailyContent />
-    <NewContent :newImgs="newImgs" />
-    <CategoryContent :categoryImgs="categoryImgs" />
-    <RankContent :rankings="rankings" />
+    <NewContent />
+    <CategoryContent />
+    <RankContent />
     <Footer />
     <SideDrawer />
   </div>
@@ -21,16 +21,6 @@ import SideDrawer from '@/components/SideDrawer';
 
 import Imgs from '@/assets/rawData/imgs';
 import { rankings } from '@/assets/rawData/rank';
-/*
-console.log(Imgs)
-{
-  dailyImgs: {
-    Mon: {row1:[], row2:[]}
-    ...
-    Sun: {row1:[], row2:[]}
-  }
-}
-*/
 
 export default {
   components: {
@@ -44,9 +34,9 @@ export default {
   },
   data() {
     return {
-      dailyImgs: [],
-      newImgs: [],
-      categoryImgs: [],
+      // dailyImgs: [],
+      // newImgs: [],
+      // categoryImgs: [],
       rankings: {}
     }
   },
@@ -54,73 +44,30 @@ export default {
   //   console.log('rankings', rankings)
   // },
   asyncData() {
-    // get dailyImg data
-    const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-    
-    let dailyImgArray = [];
-    for (let i = 0; i < days.length; i++) {
-      for (let imgDayKey in Imgs.dailyImgs) {
-        if (imgDayKey === days[i]) {
-          dailyImgArray.push(Imgs.dailyImgs[imgDayKey]);
-        }
-      }
-    }
-    // dailyImgArray: [ {row1:[],row2:[] },...,{}]
-    // push color randomly to elements
-    const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
-    for (let i = 0; i < dailyImgArray.length; i++) {
-      for (let row in dailyImgArray[i]) {
-        for (let j = 0; j < dailyImgArray[i][row].length; j++) {
-          let randomIndex = Math.floor(Math.random() * colors.length);
-          dailyImgArray[i][row][j].color = colors[randomIndex];
-        }
-      }
-    }
-
-
-    // get newImg data
-    let newImgArray = [];
-    for (let newImgKey in Imgs.newImgs) {
-      newImgArray.push(Imgs.newImgs[newImgKey]);
-    }
-
-    //newImgArray
-    /*
-    [
-      [ {},...,{} ], [ {},...,{} ]
-    ]
-    */
-
-    // add color
-    for (const row of newImgArray) {
-      for (let img of row) {
-        let randomIndex = Math.floor(Math.random() * colors.length);
-        img.color = colors[randomIndex];
-      }
-    }
+    // const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
 
     //get categoryImgs
-    let cateImgs = [];
+    // let cateImgs = [];
 
     // get categoryData 
-    for(let key in Imgs.categoryImgs) {
-      let randomIndex = Math.floor(Math.random() * colors.length);
-      for(let img of Imgs.categoryImgs[key].imgs) {
-        img.color = colors[randomIndex];
-      }
-      cateImgs.push(Imgs.categoryImgs[key]);
-    }
+    // for(let key in Imgs.categoryImgs) {
+    //   let randomIndex = Math.floor(Math.random() * colors.length);
+    //   for(let img of Imgs.categoryImgs[key].imgs) {
+    //     img.color = colors[randomIndex];
+    //   }
+    //   cateImgs.push(Imgs.categoryImgs[key]);
+    // }
 
     //cateImgs:
     // [{cateTitle:'', category:'', imgs:[]}, {}]
 
     //add color to rankings
-    for(let cate in rankings) {
-      for(let key in rankings[cate]) {
-        let randomIndex = Math.floor(Math.random() * colors.length);
-        rankings[cate][key].color = colors[randomIndex];
-      }
-    }
+    // for(let cate in rankings) {
+    //   for(let key in rankings[cate]) {
+    //     let randomIndex = Math.floor(Math.random() * colors.length);
+    //     rankings[cate][key].color = colors[randomIndex];
+    //   }
+    // }
 
     // console.log(rankings)
 
@@ -136,10 +83,10 @@ export default {
     // }
 
     return {
-      dailyImgs: dailyImgArray,
-      newImgs: newImgArray,
-      categoryImgs: cateImgs,
-      rankings
+      // dailyImgs: dailyImgArray,
+      // newImgs: newImgArray,
+      // categoryImgs: cateImgs,
+      // rankings
     }
   }
 }

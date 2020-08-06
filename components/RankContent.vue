@@ -11,9 +11,9 @@
 
 <script>
 import RankList from '@/components/RankList';
-
+import { mapState } from "vuex";
 export default {
-  props: {
+  // props: {
     //rankings
     // {
     //   beCategory:{
@@ -24,8 +24,8 @@ export default {
     //     m10: {}
     //   }
     // }
-    rankings: Object
-  },
+  //   rankings: Object
+  // },
   components: {
     RankList
   },
@@ -38,6 +38,11 @@ export default {
       }
       return categories;
     }
+  },
+  computed: {
+    ...mapState({
+      rankings: state => state.home.rankings
+    })
   }
 }
 </script>

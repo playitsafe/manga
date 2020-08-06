@@ -1,6 +1,6 @@
 {
   "young": {
-    "categorytitle": "青春、热血还有战斗",
+    "categoryTitle": "青春、热血还有战斗",
     "category": "少年",
     "imgs": [
       {
@@ -54,7 +54,7 @@
     ]
   },
   "acient": {
-    "categorytitle": "公子，余生请多指教",
+    "categoryTitle": "公子，余生请多指教",
     "category": "古风",
     "imgs": [
       {

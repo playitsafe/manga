@@ -1,0 +1,44 @@
+{
+  "banners":[
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner1.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner2.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner3.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner4.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner5.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner6.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner7.png",
+      "link": "#"
+    },
+    {
+      "title": "xxxxx",
+      "url": "/imgs/banner8.png",
+      "link": "#"
+    }
+  ]
+}

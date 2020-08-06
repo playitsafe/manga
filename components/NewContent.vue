@@ -30,11 +30,12 @@
 <script>
 import ImgRow from '@/components/ImgRow';
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+import { mapState } from 'vuex';
 
 export default {
-  props: {
-    newImgs: Array
-  },
+  // props: {
+  //   newImgs: Array
+  // },
   directives: {
     swiper: directive
   },
@@ -68,6 +69,11 @@ export default {
         observeParents: true,
       }
     }
+  },
+  computed: {
+    ...mapState({
+      newImgs: state => state.home.newImgs
+    })
   }
 }
 </script>

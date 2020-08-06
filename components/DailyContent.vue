@@ -1,6 +1,6 @@
 <template>
   <div class="daily-content">
-    <DailyBar :showDay="showDay" @changeDayImg="showDay = $event" />
+    <DailyBar :showDay="showDay" @change-day-img="showDay = $event" />
     <div class="daily-content-wrap">
       <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
         :imgs="dailyImgs[showDay][row]" />
@@ -12,7 +12,7 @@
 import DailyBar from '@/components/DailyBar';
 import ImgRow from '@/components/ImgRow';
 
-import { state, mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   // props: {

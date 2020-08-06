@@ -3,8 +3,8 @@
     <div class="daily-inner">
       <ul class="daily-inner-days">
         <li v-for="(day, i) in days" :key="i" 
-          @click="$emit('changeDayImg', i)"
-          :class="{'daily-inner-days-active': i === showDay - 1}">
+          @click="$emit('change-day-img', i)"
+          :class="{'daily-inner-days-active': i === showDay}">
           {{day}}
         </li>
       </ul>
