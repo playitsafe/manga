@@ -186,7 +186,8 @@ export default {
 
           &-border {
             position: absolute;
-            bottom: -15px;
+            left: 0;
+            bottom: -10px;
             width: 18px;
             border-bottom: 1px solid #818080;
           }

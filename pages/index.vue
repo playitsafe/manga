@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import MainBanner from '@/components/MainBanner';
-import DailyContent from '@/components/DailyContent';
-import NewContent from '@/components/NewContent';
-import CategoryContent from '@/components/CategoryContent';
-import RankContent from '@/components/RankContent';
-import Footer from '@/components/Footer';
-import SideDrawer from '@/components/SideDrawer';
+import MainBanner from '@/components/home/MainBanner';
+import DailyContent from '@/components/home/DailyContent';
+import NewContent from '@/components/home/NewContent';
+import CategoryContent from '@/components/home/CategoryContent';
+import RankContent from '@/components/home/RankContent';
+import Footer from '@/components/public/Footer';
+import SideDrawer from '@/components/public/SideDrawer';
 
 import Imgs from '@/assets/rawData/imgs';
 import { rankings } from '@/assets/rawData/rank';

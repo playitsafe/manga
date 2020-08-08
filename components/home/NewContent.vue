@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import ImgRow from '@/components/ImgRow';
+import ImgRow from '@/components/public/ImgRow';
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 import { mapState } from 'vuex';
 

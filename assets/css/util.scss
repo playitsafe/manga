@@ -22,6 +22,11 @@
   align-items: center;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin inline-flex-center {
   display: inline-flex;
   align-items: center;
@@ -48,4 +53,14 @@
 @mixin visibility-show {
   visibility: visible;
   opacity: 1;
+}
+
+@mixin remove-input-style {
+  border:none;
+  border-width:0px;
+  &:focus {
+    border:none;
+    border-width:0px;
+    outline: none;
+  }
 }

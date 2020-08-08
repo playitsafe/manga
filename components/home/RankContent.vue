@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import RankList from '@/components/RankList';
+import RankList from '@/components/public/RankList';
 import { mapState } from "vuex";
 export default {
   // props: {

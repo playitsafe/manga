@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import ImgRow from '@/components/ImgRow';
+import ImgRow from '@/components/public/ImgRow';
 import { mapState } from 'vuex';
 
 export default {

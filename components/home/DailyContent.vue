@@ -1,16 +1,16 @@
 <template>
   <div class="daily-content">
-    <DailyBar :showDay="showDay" @change-day-img="showDay = $event" />
+    <DailyBar :showDay="showDay" @change-day-img="showDay = $event + 1" />
     <div class="daily-content-wrap">
-      <ImgRow v-for="row in Object.keys(dailyImgs[showDay])" :key="row"
-        :imgs="dailyImgs[showDay][row]" />
+      <ImgRow v-for="row in Object.keys(dailyImgs[showDay - 1])" :key="row"
+        :imgs="dailyImgs[showDay - 1][row]" />
     </div>
   </div>
 </template>
 
 <script>
-import DailyBar from '@/components/DailyBar';
-import ImgRow from '@/components/ImgRow';
+import DailyBar from '@/components/home/DailyBar';
+import ImgRow from '@/components/public/ImgRow';
 
 import { mapGetters } from 'vuex';
 

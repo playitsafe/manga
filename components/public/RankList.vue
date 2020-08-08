@@ -17,7 +17,10 @@
         :id="`rank-dropdown-${rankType}`">
         <li class="rank-wrap-head-dropdown-item"
           v-for="(cate,i) in categories" :key="i"
-          :class="{ colx2: categories.length > 6 }"
+          :class="{
+            colx2: categories.length > 6, 
+            active: categories[i] === currentRank.category
+          }"
           @click="onSelectCategory(cate)">
           {{cate}}
         </li>
@@ -71,7 +74,6 @@ export default {
 
     },
     listenHandler(e) {
-      console.log('listening')
       let clickedInDropDownBox = document.getElementById(`rank-dropdown-${this.rankType}`).contains(e.target);
       let clickOnBtn = document.getElementById(`rank-dropdown-btn-${this.rankType}`).contains(e.target);
 
@@ -188,6 +190,11 @@ export default {
 
       .colx2 {
         flex-basis: 75px;
+      }
+
+      .active {
+        font-weight: 700;
+        color: #44e013;
       }
 
     }
