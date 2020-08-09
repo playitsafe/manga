@@ -5,8 +5,6 @@
     <NewContent />
     <CategoryContent />
     <RankContent />
-    <Footer />
-    <SideDrawer />
   </div>
 </template>
 
@@ -16,8 +14,6 @@ import DailyContent from '@/components/home/DailyContent';
 import NewContent from '@/components/home/NewContent';
 import CategoryContent from '@/components/home/CategoryContent';
 import RankContent from '@/components/home/RankContent';
-import Footer from '@/components/public/Footer';
-import SideDrawer from '@/components/public/SideDrawer';
 
 import Imgs from '@/assets/rawData/imgs';
 import { rankings } from '@/assets/rawData/rank';
@@ -28,9 +24,7 @@ export default {
     DailyContent,
     NewContent,
     CategoryContent,
-    RankContent,
-    Footer,
-    SideDrawer
+    RankContent
   },
   data() {
     return {

@@ -3,7 +3,7 @@
     <div class="header-outer">
       <div class="left-nav">
         <ul>
-          <li><a href="#"><img src="imgs/webtoon-logo.jpg" alt="logo"></a></li>
+          <nuxt-link to="/"><li><img src="imgs/webtoon-logo.jpg" alt="logo"></li></nuxt-link> 
           <li><a href="#">原创</a></li>
           <li><a href="#">分类</a></li>
           <li><a href="#">流行</a></li>
