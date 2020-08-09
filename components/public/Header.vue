@@ -19,35 +19,6 @@
             <i class="fas fa-search"></i>
           </a>
 
-          <div class="login-box" v-if="showLoginbox" id="login-box">
-            <span class="login-box-arrow"></span>
-            <span class="login-box-close" @click="closeLoginbox" id="login-box-closer">
-              <i class="fas fa-times"></i>
-            </span>
-            <div class="login-box-inner">
-              <p class="login-box-inner-title">登录</p>
-              <div class="login-box-inner-username">
-                <div class="login-box-inner-username-input">
-                  <i class="fas fa-user"></i>
-                  <input type="text" placeholder="输入邮箱">
-                </div>
-                <small class="login-box-inner-username-info">请输入正确的邮箱</small>
-              </div>
-              <div class="login-box-inner-password">
-                <div class="login-box-inner-password-input">
-                  <i class="fas fa-lock"></i>
-                  <input type="password" placeholder="输入密码">
-                </div>
-                <small class="login-box-inner-password-info">请输入密码</small>
-              </div>
-              <a class="login-box-inner-btn valid">登录</a>
-              <div class="login-box-inner-bottom">
-                <a href="/register" target="_blank" class="login-box-inner-bottom-register">没有账号？去注册</a>
-                <div class="bar"></div>
-                <a href="#" class="login-box-inner-bottom-forget">忘记密码</a>
-              </div>
-            </div>
-          </div>
         </div>
         <div class="search" v-else>
           <input type="text" placeholder="可以用作品或作者进行搜索。">
@@ -56,26 +27,90 @@
             <i class="far fa-times-circle" @click="showSearchInput = !showSearchInput"></i>
           </div>
         </div>
+        <div class="login-box" v-show="showLoginbox" id="login-box">
+          <span class="login-box-arrow"></span>
+          <span class="login-box-close" @click="closeLoginbox">
+            <i class="fas fa-times"></i>
+          </span>
+          <div class="login-box-inner">
+            <p class="login-box-inner-title">登录</p>
+            <div class="login-box-inner-username">
+              <div class="login-box-inner-username-input"
+                :class="{'error-border': $v.email.$error}">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="输入邮箱" v-model.trim="$v.email.$model">
+              </div>
+              <small class="login-box-inner-username-info"
+                v-show="!$v.email.email && $v.email.$error && $v.email.required">
+                邮箱格式无效
+              </small>
+              <small class="login-box-inner-username-info"
+                v-show="!$v.email.required && $v.email.$error">
+                请输入登录邮箱
+              </small>
+            </div>
+            <div class="login-box-inner-password">
+              <div class="login-box-inner-password-input"
+                :class="{'error-border': $v.password.$error}">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="输入密码" v-model="$v.password.$model">
+              </div>
+              <small class="login-box-inner-password-info" v-show="!$v.password.required && $v.password.$error">请输入密码</small>
+            </div>
+            <a class="login-box-inner-btn" href="javascript:;"
+              :class="$v.$invalid ? 'invalid' : 'valid'"
+              @click="onLogin">登录</a>
+            <div class="login-box-inner-bottom">
+              <a href="javascript:;" @click="toRegister" class="login-box-inner-bottom-register">没有账号？去注册</a>
+              <div class="bar"></div>
+              <a href="#" class="login-box-inner-bottom-forget">忘记密码</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { required, email } from 'vuelidate/lib/validators';
+import { validationMixin } from 'vuelidate';
+
 export default {
   data() {
     return {
       showSearchInput: false,
-      showLoginbox: false
+      showLoginbox: false,
+      email: '',
+      password: ''
     }
+  },
+  mixins: [validationMixin],
+  validations: {
+    email: {
+      required,
+      email
+    },
+    password: {
+      required
+    }
+  },
+  computed: {
+    // fineToLogin() {
+    //   return !this.$v.$invalid;
+    // },
+    
   },
   methods: {
     listenHandler(e) {
       e.stopPropagation();
 
-      // console.log('listening...')
+      console.log('listening...')
       let clickInBox = document.getElementById('login-box').contains(e.target);
-      let clickOnLoginBtn = document.getElementById('login-btn').contains(e.target);
+      let clickOnLoginBtn;
+      if (document.getElementById('login-btn')) {
+        clickOnLoginBtn = document.getElementById('login-btn').contains(e.target);
+      }
 
       if(!clickInBox && !clickOnLoginBtn) {
         e.stopPropagation();
@@ -90,6 +125,17 @@ export default {
     openLoginbox() {
       this.showLoginbox = true;
       window.addEventListener('click', this.listenHandler);
+    },
+    onLogin() {
+      if (!this.$v.$invalid) {
+        console.log('login')
+        //console.log(this.fineToLogin);
+      }
+    },
+    toRegister() {
+      window.removeEventListener('click', this.listenHandler);
+      this.showLoginbox = false;
+      this.$router.push('/register');
     }
   }
 }
@@ -140,6 +186,7 @@ export default {
     .right-nav {
       margin-right: 40px;
       @include flex-v-center;
+      position: relative;
 
       .login {
         position: relative;
@@ -176,145 +223,7 @@ export default {
           @include hover-pointer;
         }
 
-        &-box {
-          position: absolute; 
-          height: 420px;
-          width: 358px;
-          background: #2c2c2c;
-          left: -250px;
-          top: 50px;
-          border-radius: 15px;
-          z-index: 99;
-          color: #ffffff;
-          padding: 20px;
-
-          &-close {
-            position: absolute;
-            top: 10px;
-            right: 25px;
-            font-size: 25px;
-            color: #858585;
-            cursor: pointer;
-          }
-
-          &-arrow {
-            position: absolute;
-            display: inline-block;
-            height: 0;
-            width: 0;
-            border-left: 9px solid transparent;
-            border-right: 9px solid transparent;
-            border-bottom: 15px solid #2c2c2c;
-            top: -15px;
-            right: 50px; 
-          }
-
-          &-inner {
-            padding: 30px;
-            text-align: center;
-
-            &-title {
-              font-size: 20px;
-              letter-spacing: 30px;
-              margin-bottom: 30px;
-              padding-left: 30px;
-            }
-
-            &-username-info, &-password-info {
-              text-align: left;
-              color: #c38cff;
-            }
-
-            &-username {
-              margin-bottom: 35px;
-              @include flex-column;
-              overflow: hidden;
-
-              &-input {
-                border-bottom: 1px solid #6e6e6e;
-                display: flex;
-                i {
-                  color: #797979;
-                  margin: 0 5px;
-                  line-height: 20px;
-                }
-                input {
-                  @include remove-input-style;
-                  background: #2c2c2c;
-                  color: #ffffff;
-                  width: 100%;
-
-                  &::placeholder {
-                    font-family: 'Noto Serif SC';
-                  }
-                }
-              }
-            }
-
-            &-password {
-              margin-bottom: 35px;
-              @include flex-column;
-
-              &-input {
-                border-bottom: 1px solid #6e6e6e;
-                display: flex;
-
-                i {
-                  color: #797979;
-                  margin: 0 5px;
-                  line-height: 20px;
-                }
-                input {
-                  @include remove-input-style;
-                  background: #2c2c2c;
-                  color: #ffffff;
-                  font-family: sans-serif;
-                  width: 100%;
-  
-                  &::placeholder {
-                    font-family: 'Noto Serif SC';
-                  }
-                }
-              }
-            }
-
-            &-btn {
-              display: block;
-              /* height: 40px; */
-              padding: 10px 60px 10px 90px;
-              border-radius: 20px;
-              letter-spacing: 30px;
-              cursor: pointer;
-              margin-bottom: 30px;
-
-              &.invalid {
-                background: #d7d7d7;
-              }
-
-              &.valid {
-                background: #c38cff;
-              }
-            }
-
-            &-bottom {
-              display: flex;
-              padding: 0 15px;
-              justify-content: space-between;
-              align-items: center;
-
-              .bar {
-                height: 15px;
-                border-right: 1px solid #ffffff;
-              }
-
-              &-forget {
-                color: #868686;
-              }
-            }
-          }
-
-
-        }
+        
       }
 
       .search {
@@ -356,6 +265,156 @@ export default {
             @include hover-pointer;
           }
 
+        }
+      }
+
+      .login-box {
+        left: -250px;
+        top: 50px;
+        position: absolute; 
+        height: 420px;
+        width: 358px;
+        background: #2c2c2c;
+        border-radius: 15px;
+        z-index: 99;
+        color: #ffffff;
+        padding: 20px;
+
+        &-close {
+          position: absolute;
+          top: 10px;
+          right: 25px;
+          font-size: 25px;
+          color: #858585;
+          cursor: pointer;
+        }
+
+        &-arrow {
+          position: absolute;
+          display: inline-block;
+          height: 0;
+          width: 0;
+          border-left: 9px solid transparent;
+          border-right: 9px solid transparent;
+          border-bottom: 15px solid #2c2c2c;
+          top: -15px;
+          right: 50px; 
+        }
+
+        &-inner {
+          padding: 30px;
+          text-align: center;
+
+          &-title {
+            font-size: 20px;
+            letter-spacing: 30px;
+            margin-bottom: 30px;
+            padding-left: 30px;
+          }
+
+          &-username-info, &-password-info {
+            text-align: left;
+            color: #c38cff;
+          }
+
+          &-username {
+            margin-bottom: 35px;
+            @include flex-column;
+            overflow: hidden;
+            height: 45px;
+
+            &-input {
+              border-bottom: 1px solid #6e6e6e;
+              display: flex;
+
+              &.error-border {
+                border-bottom: 1px solid #c38cff;
+              }
+
+              i {
+                color: #797979;
+                margin: 0 5px;
+                line-height: 20px;
+              }
+              input {
+                @include remove-input-style;
+                background: #2c2c2c;
+                color: #ffffff;
+                width: 100%;
+
+                &::placeholder {
+                  font-family: 'Noto Serif SC';
+                }
+              }
+            }
+          }
+
+          &-password {
+            margin-bottom: 35px;
+            @include flex-column;
+            height: 45px;
+
+            &-input {
+              border-bottom: 1px solid #6e6e6e;
+              display: flex;
+
+              &.error-border {
+                border-bottom: 1px solid #c38cff;
+              }
+
+              i {
+                color: #797979;
+                margin: 0 5px;
+                line-height: 20px;
+              }
+              input {
+                @include remove-input-style;
+                background: #2c2c2c;
+                color: #ffffff;
+                font-family: sans-serif;
+                width: 100%;
+
+                &::placeholder {
+                  font-family: 'Noto Serif SC';
+                }
+              }
+            }
+          }
+
+          &-btn {
+            display: block;
+            /* height: 40px; */
+            padding: 10px 60px 10px 90px;
+            border-radius: 20px;
+            letter-spacing: 30px;
+            cursor: pointer;
+            margin-bottom: 30px;
+
+            &.invalid {
+              background: #d7d7d7;
+              cursor: no-drop;
+            }
+
+            &.valid {
+              background: #c38cff;
+            }
+          }
+
+          &-bottom {
+            display: flex;
+            padding: 0 15px;
+            justify-content: space-between;
+            align-items: center;
+
+            .bar {
+              height: 15px;
+              border-right: 1px solid #ffffff;
+            }
+
+            &-forget {
+              color: #868686;
+            }
+          }
         }
       }
     }

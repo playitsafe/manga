@@ -27,7 +27,8 @@ export default {
   },
   data() {
     return {
-      showDay: new Date().getDay()
+      // Sun:0 Mon:1...
+      showDay: new Date().getDay() === 0 ? 7 : new Date().getDay()
     }
   },
   computed: {

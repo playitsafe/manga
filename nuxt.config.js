@@ -44,6 +44,7 @@ export default {
   */
   plugins: [
     // {src: '@/plugins/vue-awesome-swiper.js', mode: 'client'}
+    //'@/plugins/vuelidate.client.js'
   ],
   /*
   ** Auto import components
@@ -78,5 +79,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+    // vendor: [
+    //   'vuelidate'
+    // ]
   }
 }
