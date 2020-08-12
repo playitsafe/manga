@@ -8,6 +8,7 @@
 // ]
 const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
 const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
 export const getDailyContentArray = (dailyImgsObj) => {
   let dailyImgArray = [];
   for (let i = 0; i < days.length; i++) {
@@ -97,3 +98,79 @@ export const addColor = (rankings) => {
   return rankings;
 }
 
+//***convert full daily contents obj to array and add color
+// {
+//   Mon: [{},{}]
+// }
+// ===
+// [
+//   [{}, {}],
+//   [{}, {}],
+//   ...
+// ]
+
+const addColorByCategory = (obj) => {
+  switch (obj.category) {
+    case "少年":
+      obj.color = '#046afa'
+      break;
+    
+    case "悬疑":
+      obj.color = '#00b19a'
+      break;
+
+    case "恋爱":
+      obj.color = '#fd337f'
+      break;
+    
+    case "治愈":
+      obj.color = '#18b636'
+      break;
+
+    case "古风":
+      obj.color = '#8e702f'
+      break;
+    
+    case "奇幻":
+      obj.color = '#00b19a'
+      break;
+      
+    case "搞笑":
+      obj.color = '#37308c'
+      break;
+    
+    case "校园":
+      obj.color = '#18b636'
+      break;
+    
+    case "都市":
+      obj.color = '#00b19a'
+      break;
+      
+    case "励志":
+      obj.color = '#37308c'
+      break;
+    
+    default:
+      break;
+  }
+}
+export const getFullWeekArr = (dailyContents) => {
+  let weekArray = [];
+  for(let day of days) {
+    for(let key in dailyContents) { //Mon...
+      if(key === day) {
+        weekArray.push(dailyContents[key]);
+      }
+    }
+  }
+
+  //inject color
+  for(let day of weekArray) {
+    for(let obj of day) {
+      addColorByCategory(obj);
+    }
+  }
+
+  return weekArray;
+}

@@ -1,23 +1,26 @@
 <template>
-  <div class="sticky" :class="{fixed: isFixed}">
-    <div class="sticky-inner">
-      <ul class="sticky-inner-navs">
-        <a href="javascript:;" class="sticky-inner-navs-item"
-          v-for="(navTab, i) in navItems" :key="i"
-          :class="{active: i === activeTab}"
-          @click="activeTab = i">
-          <li>{{navTab}}</li>
-        </a>
-      </ul>
-      <div class="sticky-inner-filter" @click="onClickFilter" id="daily-sticky-filter-btn">
-        {{filterItems[currentFilter]}}
-        <i class="fas fa-angle-down"></i>
+  <div>
+    <div class="sticky" :class="{fixed: isFixed}" id="stickybar">
+      <div class="sticky-inner">
+        <ul class="sticky-inner-navs">
+          <a href="javascript:;" class="sticky-inner-navs-item"
+            v-for="(navTab, i) in navItems" :key="i"
+            :class="{active: i === activeTab}"
+            @click="activeTab = i">
+            <li>{{navTab}}</li>
+          </a>
+        </ul>
+        <div class="sticky-inner-filter" @click="onClickFilter" id="daily-sticky-filter-btn">
+          {{filterItems[currentFilter]}}
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <ul id="daily-sticky-filter-box" class="sticky-inner-dropdown" v-show="showDropdown">
+          <li v-for="(item, i) in filterItems" :key="i"
+            @click="onSelectFilter(i)">{{item}}</li>
+        </ul>
       </div>
-      <ul id="daily-sticky-filter-box" class="sticky-inner-dropdown" v-show="showDropdown">
-        <li v-for="(item, i) in filterItems" :key="i"
-          @click="onSelectFilter(i)">{{item}}</li>
-      </ul>
     </div>
+    <div class="holder" v-if="isFixed"></div>
   </div>
 </template>
 
@@ -68,6 +71,14 @@ export default {
       console.log('scroll!')
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       this.isFixed = scrollTop > 100 ? true : false;
+      // if (scrollTop > 100) {
+      //   this.isFixed = true;
+      //   let btn = document.getElementById("daily-sticky-filter-btn");
+      //   let rect = btn.getBoundingClientRect();
+      //   console.log(rect)
+      // } else {
+      //   this.isFixed = false;
+      // }
     }
   }
 }
@@ -175,6 +186,11 @@ export default {
 
     }
   }
+}
+
+.holder {
+  width: 100%;
+  height: 67px;
 }
 
 </style>
