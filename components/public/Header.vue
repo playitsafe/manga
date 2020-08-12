@@ -4,7 +4,7 @@
       <div class="left-nav">
         <ul>
           <nuxt-link to="/"><li><img src="imgs/webtoon-logo.jpg" alt="logo"></li></nuxt-link> 
-          <li><a href="#">原创</a></li>
+          <li><nuxt-link to="/daily">每日递送</nuxt-link></li>
           <li><a href="#">分类</a></li>
           <li><a href="#">流行</a></li>
           <li><a href="#">排行榜</a></li>
@@ -105,7 +105,7 @@ export default {
     listenHandler(e) {
       e.stopPropagation();
 
-      console.log('listening...')
+      // console.log('listening...');
       let clickInBox = document.getElementById('login-box').contains(e.target);
       let clickOnLoginBtn;
       if (document.getElementById('login-btn')) {

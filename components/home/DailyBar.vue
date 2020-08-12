@@ -1,14 +1,14 @@
 <template>
-  <div class="daily">
-    <div class="daily-inner">
-      <ul class="daily-inner-days">
+  <div class="dailybar">
+    <div class="dailybar-inner">
+      <ul class="dailybar-inner-days">
         <li v-for="(day, i) in days" :key="i" 
           @click="$emit('change-day-img', i)"
-          :class="{'daily-inner-days-active': i === showDay - 1}">
+          :class="{'dailybar-inner-days-active': i === showDay - 1}">
           {{day}}
         </li>
       </ul>
-      <div class="daily-inner-more">
+      <div class="dailybar-inner-more">
         <a href="#">查看更多</a>
       </div>
     </div>
@@ -39,7 +39,7 @@ export default {
 <style lang="scss">
 @import '@/assets/css/util.scss';
 
-.daily {
+.dailybar {
   position: relative;
   /* z-index: 99; */
   height: 62px;
