@@ -92,6 +92,7 @@ export default {
   background: #fff;
   border-top: 1px solid #eaeaea;
   border-bottom: 1px solid #eaeaea;
+  z-index: 98;
 
   &.fixed {
     position: fixed;

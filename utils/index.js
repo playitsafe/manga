@@ -132,7 +132,7 @@ const addColorByCategory = (obj) => {
       break;
     
     case "奇幻":
-      obj.color = '#00b19a'
+      obj.color = '#046afa'
       break;
       
     case "搞笑":

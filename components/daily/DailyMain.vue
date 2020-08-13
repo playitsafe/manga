@@ -11,7 +11,7 @@
             <div class="daily-main-inner-week-day-inner-list">
               <DailyListGrid v-for="(item,j) in weekArray[i]" :key="j"
                 :large="activeDay - 1 === i"
-                :gridData="item" />
+                :gridData="item" class="daily-main-inner-week-day-inner-list-grid" />
             </div>
           </div>
         </div>
@@ -69,6 +69,7 @@ export default {
       width: 100%;
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
 
       &-day {
         padding: 0 4px;
@@ -78,6 +79,7 @@ export default {
           background: #28DC18;
           width: 236px;
           color: #fff;
+          padding-bottom: 4px;
           /* transition: all ease .2s; */
         }
 
@@ -93,6 +95,15 @@ export default {
 
           &-list {
             @include flex-column;
+            &:last-child {
+              border-bottom: 1px solid #dbdbdb;
+            }
+
+            &-grid {
+              border-top: 1px solid #dbdbdb;
+              border-left: 1px solid #dbdbdb;
+              border-right: 1px solid #dbdbdb;
+            }
           }
 
         }
@@ -100,4 +111,5 @@ export default {
     }
   }
 }
+
 </style>
