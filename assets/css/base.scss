@@ -2,6 +2,7 @@
 
 html {
   padding: env(safe=area-inset);
+  scroll-behavior: smooth;
 }
 
 /*-- Prevent Horizontal Scrolling & Font Style --*/

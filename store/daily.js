@@ -17,7 +17,7 @@ export const actions = {
     commit('setDailyContents', dailyContents);
   },
   setCompletedContents: ({ commit }, completedContents) => {
-    commit('setDailyImgs', completedContents);
+    commit('setCompletedContents', completedContents);
   }
 }
 

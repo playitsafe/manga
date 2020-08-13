@@ -155,6 +155,7 @@ const addColorByCategory = (obj) => {
       break;
   }
 }
+
 export const getFullWeekArr = (dailyContents) => {
   let weekArray = [];
   for(let day of days) {
@@ -171,6 +172,13 @@ export const getFullWeekArr = (dailyContents) => {
       addColorByCategory(obj);
     }
   }
-
   return weekArray;
+}
+
+// [{}..{}] => [{}..{}] only add color
+export const getColoredObjArr = (objArr) => {
+  for(let obj of objArr) {
+    addColorByCategory(obj);
+  }
+  return objArr;
 }

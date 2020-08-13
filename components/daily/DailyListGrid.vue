@@ -19,7 +19,6 @@
       </p>
       <!-- <div class="daily-grid-img" :style="`background-image: url(${gridData.imgUrl});`"></div> -->
     </div>
-
   </a>
 </template>
 
@@ -89,7 +88,7 @@ export default {
       justify-content: center;
       border-radius: 50%;
       margin-right: 4px;
-      margin-top: 4px;
+      margin-top: 10px;
     }
 
     &-new {

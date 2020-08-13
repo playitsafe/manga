@@ -6,8 +6,8 @@
           <a href="javascript:;" class="sticky-inner-navs-item"
             v-for="(navTab, i) in navItems" :key="i"
             :class="{active: i === activeTab}"
-            @click="activeTab = i">
-            <li>{{navTab}}</li>
+            @click="scrollToTarget(navTab.id, i)">
+            <li>{{navTab.title}}</li>
           </a>
         </ul>
         <div class="sticky-inner-filter" @click="onClickFilter" id="daily-sticky-filter-btn">
@@ -68,7 +68,7 @@ export default {
       this.showDropdown = false;
     },
     checkScrollForFix() {
-      console.log('scroll!')
+      //console.log('scroll!')
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       this.isFixed = scrollTop > 100 ? true : false;
       // if (scrollTop > 100) {
@@ -79,6 +79,19 @@ export default {
       // } else {
       //   this.isFixed = false;
       // }
+    },
+    scrollToTarget(id, i) {
+      this.activeTab = i;
+      let targetEl = document.querySelector(id),
+          stickyBarHeight = 67,
+          headerHeight = 100,
+          scrolledFromTop = window.pageYOffset || document.documentElement.scrollTop,
+          targetElPositionY = targetEl.getBoundingClientRect().top,
+          targetElOriginY = targetElPositionY + scrolledFromTop;
+      
+      document.documentElement.scrollTo(0, targetElOriginY - stickyBarHeight);
+      // console.log(window.getComputedStyle(targetEl));
+      // console.log(targetEl.getClientRects())
     }
   }
 }

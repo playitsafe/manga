@@ -1,5 +1,5 @@
 <template>
-  <div class="daily-main">
+  <div class="daily-main" id="daily-week">
     <div class="daily-main-inner">
       <h2>连载作品</h2>
       <div class="daily-main-inner-week">

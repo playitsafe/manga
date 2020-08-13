@@ -1,4 +1,4 @@
-import { getDailyContentArray, getNewContentArray, getCategoryArray, addColor, getFullWeekArr } from '@/utils';
+import { getDailyContentArray, getNewContentArray, getCategoryArray, addColor, getFullWeekArr, getColoredObjArr } from '@/utils';
 
 export const state = () => ({
   
@@ -46,6 +46,12 @@ export const actions = {
     const { status:status6, data:dailyContents } = await app.$axios.get('/fullWeek');
     if (status6 === 200) {
       commit('daily/setDailyContents', getFullWeekArr(dailyContents));
+    }
+
+    //***get completed content */
+    const { status:status7, data:completedItems } = await app.$axios.get('/fullCompleted');
+    if (status7 === 200) {
+      commit('daily/setCompletedContents', getColoredObjArr(completedItems.completed));
     }
 
   }
