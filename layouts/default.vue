@@ -4,6 +4,7 @@
     <Nuxt />
     <Footer />
     <SideDrawer />
+    <BackToTop />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import Header from '@/components/public/Header';
 import Footer from '@/components/public/Footer';
 import SideDrawer from '@/components/public/SideDrawer';
+import BackToTop from '@/components/public/BackToTop';
 
 export default {
   components: {
     Header,
     Footer,
-    SideDrawer
+    SideDrawer,
+    BackToTop
   }
 }
 </script>

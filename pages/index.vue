@@ -15,8 +15,8 @@ import NewContent from '@/components/home/NewContent';
 import CategoryContent from '@/components/home/CategoryContent';
 import RankContent from '@/components/home/RankContent';
 
-import Imgs from '@/assets/rawData/imgs';
-import { rankings } from '@/assets/rawData/rank';
+// import Imgs from '@/assets/rawData/imgs';
+// import { rankings } from '@/assets/rawData/rank';
 
 export default {
   components: {
@@ -24,7 +24,7 @@ export default {
     DailyContent,
     NewContent,
     CategoryContent,
-    RankContent
+    RankContent,
   },
   data() {
     return {

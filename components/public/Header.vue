@@ -1,5 +1,5 @@
 <template>
-  <div class="my-header">
+  <div class="my-header" id="my-header">
     <div class="header-outer">
       <div class="left-nav">
         <ul>
