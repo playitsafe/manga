@@ -4,22 +4,20 @@
       <h2>完结作品</h2>
       <ul class="completed-inner-view">
         <li class="completed-inner-view-grid" v-for="item in completedItems" :key="item.id">
-          <DailyListGrid :gridData="item" :large="true" />
+          <ListGrid :gridData="item" :large="true" />
         </li>
-        
-
       </ul>
     </div>
   </div>
 </template>
 
 <script>
-import DailyListGrid from '@/components/daily/DailyListGrid';
+import ListGrid from '@/components/public/ListGrid';
 import { mapState } from 'vuex';
 
 export default {
   components: {
-    DailyListGrid
+    ListGrid
   },
   computed: {
     ...mapState({
@@ -57,13 +55,8 @@ export default {
         width: 228px;
         border: 1px solid #eaeaea;
         margin-bottom: 15px;
-        
       }
     }
-
   }
-
-
-        
 }
 </style>

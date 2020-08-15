@@ -9,7 +9,7 @@
           <div class="daily-main-inner-week-day-inner">
             <h4 @click="activeDay = i + 1">{{day}}</h4>
             <div class="daily-main-inner-week-day-inner-list">
-              <DailyListGrid v-for="(item,j) in weekArray[i]" :key="j"
+              <ListGrid v-for="(item,j) in weekArray[i]" :key="j"
                 :large="activeDay - 1 === i"
                 :gridData="item" class="daily-main-inner-week-day-inner-list-grid" />
             </div>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import DailyListGrid from '@/components/daily/DailyListGrid';
+import ListGrid from '@/components/public/ListGrid';
 import { mapState } from 'vuex';
 
 export default {
@@ -29,7 +29,7 @@ export default {
   //   weekArray: Array
   // },
   components: {
-    DailyListGrid
+    ListGrid
   },
 
   data() {
@@ -103,6 +103,8 @@ export default {
               border-top: 1px solid #dbdbdb;
               border-left: 1px solid #dbdbdb;
               border-right: 1px solid #dbdbdb;
+              width: 100%;
+              height: 152px;
             }
           }
 

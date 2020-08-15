@@ -1,0 +1,17 @@
+{
+  "completed|53": [
+    {
+      "id|+1": 200,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": false,
+      "isUpdated": false,
+      "isSuspended": false,
+      "isEnded": true
+    }
+  ]
+}
+    

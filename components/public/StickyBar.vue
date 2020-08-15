@@ -6,7 +6,13 @@
           <a href="javascript:;" class="sticky-inner-navs-item"
             v-for="(navTab, i) in navItems" :key="i"
             :class="{active: i === activeTab}"
-            @click="scrollToTarget(navTab.id, i)">
+            :style="{
+              background: i === activeTab ? navTab.color : '#fff',
+              color: i === activeTab ? '#fff' : '#000'
+            }"
+            @click="scrollToTarget(navTab.id, i)"
+            @mouseover="hoverOnMenu(navTab.color, i, $event)"
+            @mouseout="leaveMenu(i, $event)">
             <li>{{navTab.title}}</li>
           </a>
         </ul>
@@ -25,6 +31,9 @@
 </template>
 
 <script>
+import throttle from 'lodash/throttle';
+
+let throttleHandler;
 export default {
   props: {
     navItems: Array
@@ -40,14 +49,18 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.checkScrollForFix);
+    throttleHandler = throttle(this.onScrollEvent, 300);
+    window.addEventListener('scroll', throttleHandler);
+    window.addEventListener('scroll', this.checkForFix);
   },
   destroyed() {
-    window.removeEventListener('scroll', this.checkScrollForFix);
+    console.log('scroll destroyed')
+    window.removeEventListener('scroll', throttleHandler);
+    window.removeEventListener('scroll', this.checkForFix);
   },
   methods: {
     listenHandler(e) {
-      console.log('listening!')
+      // console.log('listening!')
       let clickOnDropdown = document.getElementById('daily-sticky-filter-box').contains(e.target);
       let clickOnFilterBtn = document.getElementById('daily-sticky-filter-btn').contains(e.target);
       
@@ -56,7 +69,6 @@ export default {
         this.showDropdown = false;
       }
     },
-
     onClickFilter() {
       this.showDropdown = true;
       window.addEventListener('click', this.listenHandler);
@@ -67,21 +79,68 @@ export default {
       window.removeEventListener('click', this.listenHandler);
       this.showDropdown = false;
     },
-    checkScrollForFix() {
-      //console.log('scroll!')
+    checkForFix() {
+      console.log('Fix navbar triggered')
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       this.isFixed = scrollTop > 100 ? true : false;
-      // if (scrollTop > 100) {
-      //   this.isFixed = true;
-      //   let btn = document.getElementById("daily-sticky-filter-btn");
-      //   let rect = btn.getBoundingClientRect();
-      //   console.log(rect)
-      // } else {
-      //   this.isFixed = false;
-      // }
     },
+    // checkNavHighlight() {
+    //   console.log('check highlight fired!!!')
+    //   for(let nav of this.navItems) {
+    //     let i = this.navItems.indexOf(nav);
+    //     if (document.querySelector(nav.id)) {
+    //       let el = document.querySelector(nav.id);
+    //       // let nextEl = document.querySelector(this.navItems[i+1].id);
+    //       let distanceToTop = el.getBoundingClientRect().top;
+    //       // let nextElDistanceToTop = nextEl.getBoundingClientRect().top;
+    //       let windowHeight = document.documentElement.clientHeight || window.innerHeight;
+    //       //console.log('distanceToTop', distanceToTop)
+    //       //console.log('windowHeight', windowHeight)
+    //       if (distanceToTop > 0 && distanceToTop < (windowHeight * 0.5)) {
+    //         this.activeTab = i;
+    //       } else if (distanceToTop > (windowHeight * 0.5) && distanceToTop < windowHeight) {
+    //         this.activeTab = i - 1;
+    //         //console.log('else',i)
+    //       }
+    //     }
+    //   }
+    // },
+    onScrollEvent() {
+      console.log('OnChangeNavbar Triggered')
+      //check for fix bar
+      // let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+      // this.isFixed = scrollTop > 100 ? true : false;
+      //this.checkForFix();
+      // check for menu highlight
+      // let currentIndex = this.activeTab;
+      
+      
+      for(let nav of this.navItems) {
+        let i = this.navItems.indexOf(nav);
+        if (document.querySelector(nav.id)) {
+          let el = document.querySelector(nav.id);
+          // let nextEl = document.querySelector(this.navItems[i+1].id);
+          let distanceToTop = el.getBoundingClientRect().top;
+          // let nextElDistanceToTop = nextEl.getBoundingClientRect().top;
+          let windowHeight = document.documentElement.clientHeight || window.innerHeight;
+          //console.log('distanceToTop', distanceToTop)
+          //console.log('windowHeight', windowHeight)
+          if (distanceToTop > 0 && distanceToTop < (windowHeight * 0.5)) {
+            this.activeTab = i;
+          } else if (distanceToTop > (windowHeight * 0.5) && distanceToTop < windowHeight) {
+            this.activeTab = i - 1;
+            //console.log('else',i)
+          }
+        }
+      }
+      
+     }, 
+    // throttleHandler() {
+    //   console.log('d')
+    //   throttle(this.onScrollEvent, 500);
+    // },
     scrollToTarget(id, i) {
-      this.activeTab = i;
+      // this.activeTab = i;
       let targetEl = document.querySelector(id),
           stickyBarHeight = 67,
           headerHeight = 100,
@@ -92,6 +151,16 @@ export default {
       document.documentElement.scrollTo(0, targetElOriginY - stickyBarHeight);
       // console.log(window.getComputedStyle(targetEl));
       // console.log(targetEl.getClientRects())
+    },
+    hoverOnMenu(color, i, e) {
+      if (this.activeTab !== i) {
+        e.target.parentElement.style.color = color
+      }
+    },
+    leaveMenu(i, e) {
+      if (this.activeTab !== i) {
+        e.target.parentElement.style.color = '#000'
+      }
     }
   }
 }
@@ -131,13 +200,13 @@ export default {
         display: inline-block;
         height: 100%;
 
-        &:hover {
+        /* &:hover {
           color: #00dc64;
         }
         &.active {
           background: #00dc64;
           color: #fff;
-        }
+        } */
       }
 
 
@@ -150,10 +219,6 @@ export default {
         font-size: 18px;
         display: flex;
         align-items: center;
-
-        /* &:hover {
-          color: #00dc64;
-        } */
       }
 
       /* a {

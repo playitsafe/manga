@@ -54,5 +54,11 @@ export const actions = {
       commit('daily/setCompletedContents', getColoredObjArr(completedItems.completed));
     }
 
+    //***get genre content */
+    const { status:status8, data:genreObj } = await app.$axios.get('/genre');
+    if (status8 === 200) {
+      commit('genre/setGenreContents', genreObj);
+    }
+
   }
 }

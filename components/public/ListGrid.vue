@@ -12,6 +12,7 @@
         <span class="daily-grid-sign-new" v-show="gridData.isNew">新</span>
         <span class="daily-grid-sign-update" v-show="gridData.isUpdated">更新</span>
         <span class="daily-grid-sign-suspend" v-show="gridData.isSuspended">暂停</span>
+        <span class="daily-grid-sign-ended" v-show="gridData.isEnded">完</span>
       </div>
       <p class="daily-grid-likes" v-show="large">
         <i class="fas fa-thumbs-up"></i>
@@ -35,7 +36,7 @@ export default {
 <style lang="scss">
 .daily-grid {
   width: 100%;
-  height: 152px;
+  height: 100%;
   /* border: 1px solid #dbdbdb; */
   /* border-left: 1px solid #dbdbdb;
   border-right: 1px solid #dbdbdb; */
@@ -78,7 +79,7 @@ export default {
     /* height: 30px; */
     display: flex;
 
-    &-new, &-update, &-suspend {
+    &-new, &-update, &-suspend, &-ended {
       font-size: 14px;
       display: inline-block;
       width: 28px;
@@ -106,6 +107,10 @@ export default {
       background: #939393;
       color: #fff;
       font-size: 13px;
+    }
+    &-ended {
+      background: #939393;
+      color: #28DC18;
     }
   }
 

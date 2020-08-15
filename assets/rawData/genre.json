@@ -1,10 +1,10 @@
 {
-  "Mon|7": [
+  "love|14": [
     {
       "id|+1": 1,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "恋爱",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
@@ -13,12 +13,12 @@
       "isEnded": "@boolean"
     }  
   ],
-  "Tue|5": [
+  "young|15": [
     {
-      "id|+1": 200,
+      "id|+1": 100,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "少年",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
@@ -27,12 +27,40 @@
       "isEnded": "@boolean"
     }
   ],
-  "Wed|9": [
+  "ancient|14": [
+    {
+      "id|+1": 200,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category": "古风",
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": "@boolean",
+      "isUpdated": "@boolean",
+      "isSuspended": "@boolean",
+      "isEnded": "@boolean"
+    }  
+  ],
+  "fantasy|16": [
+    {
+      "id|+1": 300,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category": "奇幻",
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": "@boolean",
+      "isUpdated": "@boolean",
+      "isSuspended": "@boolean",
+      "isEnded": "@boolean"
+    }  
+  ],
+  "comedy|17": [
     {
       "id|+1": 400,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "搞笑",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
@@ -41,12 +69,26 @@
       "isEnded": "@boolean"
     }  
   ],
-  "Thu|4": [
+  "campus|16": [
+    {
+      "id|+1": 500,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category": "校园",
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": "@boolean",
+      "isUpdated": "@boolean",
+      "isSuspended": "@boolean",
+      "isEnded": "@boolean"
+    }  
+  ],
+  "city|15": [
     {
       "id|+1": 600,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "都市",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
@@ -55,12 +97,26 @@
       "isEnded": "@boolean"
     }  
   ],
-  "Fri|8": [
+  "healing|11": [
+    {
+      "id|+1": 700,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category": "治愈",
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": "@boolean",
+      "isUpdated": "@boolean",
+      "isSuspended": "@boolean",
+      "isEnded": "@boolean"
+    }  
+  ],
+  "suspense|7": [
     {
       "id|+1": 800,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "悬疑",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
@@ -69,32 +125,32 @@
       "isEnded": "@boolean"
     }  
   ],
-  "Sat|6": [
+  "inspiring|9": [
+    {
+      "id|+1": 900,
+      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
+      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
+      "category": "励志",
+      "likes|700-9999": 701,
+      "author|1": ["@name", "@cname"],
+      "isNew": "@boolean",
+      "isUpdated": "@boolean",
+      "isSuspended": "@boolean",
+      "isEnded": "@boolean"
+    }  
+  ],
+  "finished|6": [
     {
       "id|+1": 1000,
       "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
       "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
+      "category": "完结",
       "likes|700-9999": 701,
       "author|1": ["@name", "@cname"],
       "isNew": "@boolean",
       "isUpdated": "@boolean",
       "isSuspended": "@boolean",
-      "isEnded": "@boolean"
+      "isEnded": true
     }  
-  ],
-  "Sun|5": [
-    {
-      "id|+1": 1200,
-      "imgUrl|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg", "/imgs/x4.jpg", "/imgs/x5.jpg", "/imgs/x6.jpg", "/imgs/x7.jpg", "/imgs/x8.jpg", "/imgs/x9.jpg", "/imgs/x10.jpg"],
-      "title|1": ["女田园战歌：神界拓荒录临", "再婚皇后", "恋人攻略", "所以和黑粉结婚了", "以你之名", "此生，请多关照", "降临", "女神", "田园战歌：神界拓荒录"],
-      "category|1": ["恋爱", "少年", "古风", "奇幻", "搞笑", "校园", "都市", "治愈", "悬疑", "励志"],
-      "likes|700-9999": 701,
-      "author|1": ["@name", "@cname"],
-      "isNew": "@boolean",
-      "isUpdated": "@boolean",
-      "isSuspended": "@boolean",
-      "isEnded": "@boolean"
-    }  
-  ]
+  ]  
 }

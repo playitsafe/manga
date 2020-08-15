@@ -22,16 +22,26 @@ export default {
       navItems: [
         {
           id: '#daily-week',
-          title: '连载' 
+          title: '连载',
+          color: '#00dc64'
         },
         {
           id: '#daily-completed',
-          title: '完结' 
+          title: '完结',
+          color: '#00dc64'
         }
       ]
       // weekArray: []
     }
-  }
+  },
+  // metho
+  // mounted() {
+  //   window.addEventListener('scroll', this.checkScrollForFix);
+
+  // },
+  // destroyed() {
+
+  // }
 }
 </script>
 
