@@ -1,0 +1,53 @@
+<template>
+  <div class="rankwrap">
+    <div class="rankwrap-inner">
+      <RankColumn v-for="cateKey in Object.keys(rankings)" :key="cateKey"
+       :columnData="rankings[cateKey]" />
+    </div>
+  </div>
+</template>
+
+<script>
+import RankColumn from '@/components/rank/RankColumn';
+import { mapState } from "vuex";
+
+export default {
+  components: {
+    RankColumn
+  },
+  data() {
+    return {
+
+    }
+  },
+  computed: {
+    ...mapState({
+      rankings: state => state.home.rankings
+    })
+  },
+  methods: {
+
+  }
+}
+</script>
+
+<style lang="scss">
+@import '@/assets/css/base.scss';
+@import '@/assets/css/util.scss';
+
+.rankwrap {
+  border-top: 1px solid #eaeaea;
+  padding-bottom: 100px;
+  &-inner {
+    max-width: 1110px;
+    /* height: 200px; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    &-column {
+      
+    }
+  }
+}
+</style>

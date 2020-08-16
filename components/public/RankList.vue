@@ -27,27 +27,15 @@
       </ul>
     </div>
     <ul class="rank-wrap-lists">
-      <a href="#" v-for="(rk,i) in currentRank.rank" :key="i">
-        <li class="rank-wrap-lists-item">
-          <div class="rank-wrap-lists-item-img"
-          :style="`background-image: url(${rk.url})`">
-            {{i+1}}
-          </div>
-          <div class="rank-wrap-lists-item-text">
-            <div class="rank-wrap-lists-item-text-category"
-              :style="`color:${currentRank.color}`">
-              {{rk.cate}}
-            </div>
-            <div class="rank-wrap-lists-item-text-title">{{rk.title}}</div>
-            <div class="rank-wrap-lists-item-text-author">{{rk.author}}</div>
-          </div>
-        </li>
-      </a>
+      <RankListItem v-for="(rk,i) in currentRank.rank.slice(0,5)" :key="i" 
+        :rk="rk" :i="i" :themeColor="currentRank.color"
+        :lastOne="currentRank.rank.slice(0,5).length === i + 1" />
     </ul>
   </div>
 </template>
 
 <script>
+import RankListItem from '@/components/public/RankListItem';
 
 export default {
   props: {
@@ -204,13 +192,12 @@ export default {
   &-lists {
     list-style: none;
 
-    &-item {
+    /* &-item {
       border-top: 1px solid #dddddd;
       display: flex;
       &-img {
         height: 98px;
         width: 92px;
-        /* background-image: url('/imgs/x1.jpg'); */
         background-size: cover;
         background-position: center;
         font-size: 33px;
@@ -238,7 +225,7 @@ export default {
           font-weight: 300;
         }
       }
-    }
+    } */
   }
   
 

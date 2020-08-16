@@ -21,7 +21,10 @@ export default {
   methods: {
     scrollHandler() {
       if (window.scrollY > 300) {
+        console.log('true')
         this.showBtn = true;
+      } else if (window.scrollY <= 300) {
+        this.showBtn = false;
       }
     },
     toTop() {

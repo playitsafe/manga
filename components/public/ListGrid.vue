@@ -1,6 +1,6 @@
 <template>
   <a href="#">
-    <div class="daily-grid" :class="{large: large}"
+    <div class="daily-grid" :class="{large}"
       :style="`background-image: url(${gridData.imgUrl})`">
       <!-- <img :src="gridData.imgUrl" alt="cover"> -->
       <p :style="{color: gridData.color}" class="daily-grid-category">
@@ -50,7 +50,6 @@ export default {
 
   &-category {
     font-size: 14px;
-
   }
 
   /* &.large {

@@ -6,8 +6,7 @@
           <nuxt-link to="/"><li><img src="imgs/webtoon-logo.jpg" alt="logo"></li></nuxt-link> 
           <li><nuxt-link to="/daily">每日递送</nuxt-link></li>
           <li><nuxt-link to="/genre">分类</nuxt-link></li>
-          <li><a href="#">流行</a></li>
-          <li><a href="#">排行榜</a></li>
+          <li><nuxt-link to="/ranking">排行榜</nuxt-link></li>
         </ul>
       </div>
 
