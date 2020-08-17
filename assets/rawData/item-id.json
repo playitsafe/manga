@@ -1,0 +1,40 @@
+{
+  "category|1": [
+    {"cateName": "恋爱", "themeColor": "#fd337f"},
+    {"cateName": "少年", "themeColor": "#046afa"},
+    {"cateName": "古风", "themeColor": "#8e702f"},
+    {"cateName": "奇幻", "themeColor": "#8b00e9"},
+    {"cateName": "搞笑", "themeColor": "#eea802"},
+    {"cateName": "校园", "themeColor": "#00b19a"},
+    {"cateName": "都市", "themeColor": "#37308c"},
+    {"cateName": "治愈", "themeColor": "#18b636"},
+    {"cateName": "悬疑", "themeColor": "#424457"},
+    {"cateName": "励志", "themeColor": "#e11c1c"}
+  ],
+  "id": 101,
+  "bgImg": "/imgs/item/itembgimg.jpg",
+  "coverImg": "/imgs/item/item-cover-img.png",
+  "bottomImg": "/imgs/item/bottomImg.jpg",
+  "title": "恋人攻略",
+  "author": "@cname",
+  "stars|8000-9999": 8001,
+  "updateday": "在周一更新",
+  "desc": "她因患有罕见的不治之症备受瞩目 她性格沉稳却经历了悲惨童年 一个偶然的契机，两位少女开始了解彼此，她们将痛苦深藏，一起展开“复仇”……",
+  "episodes|10": [
+    {
+      "ep|+1": 1,
+      "epImg|1": ["/imgs/item/epimg1.jpg", "/imgs/item/epimg2.jpg", "/imgs/item/epimg3.jpg", "/imgs/item/epimg4.jpg", "/imgs/item/epimg5.jpg", "/imgs/item/epimg6.jpg", "/imgs/item/epimg7.jpg", "/imgs/item/epimg8.jpg", "/imgs/item/epimg9.jpg", "/imgs/item/epimg10.jpg"],
+      "eplink": "/ep01",
+      "updateOn": "2020-6-8",
+      "likes|8000-9999": 8000,
+      "other|3": [
+        {
+          "title": "喜欢我的小狮子",
+          "author|1": ["@cname", "@name"],
+          "likes|8000-10000":8001,
+          "cover|1": ["/imgs/x1.jpg", "/imgs/x2.jpg", "/imgs/x3.jpg"]
+        }
+      ]
+    }
+  ]
+}

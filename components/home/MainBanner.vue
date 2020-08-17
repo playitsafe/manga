@@ -13,9 +13,9 @@
       <div class="main-banner-inner-big">
         <Swiper ref="mySwiper" :options="swiperOptions">
           <SwiperSlide v-for="banner in banners" :key="banner.url">
-            <a :href="banner.link">
+            <nuxt-link to="/item/itemid001">
               <img :src="banner.url" alt="">
-            </a>
+            </nuxt-link>
           </SwiperSlide>
           <div class="swiper-pagination" slot="pagination"></div>
         </Swiper>

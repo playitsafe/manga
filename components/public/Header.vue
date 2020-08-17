@@ -4,9 +4,10 @@
       <div class="left-nav">
         <ul>
           <nuxt-link to="/"><li><img src="imgs/webtoon-logo.jpg" alt="logo"></li></nuxt-link> 
-          <li><nuxt-link to="/daily">每日递送</nuxt-link></li>
-          <li><nuxt-link to="/genre">分类</nuxt-link></li>
-          <li><nuxt-link to="/ranking">排行榜</nuxt-link></li>
+          <nuxt-link to="/"><li>首页</li></nuxt-link>
+          <nuxt-link to="/daily"><li>每日递送</li></nuxt-link>
+          <nuxt-link to="/genre"><li>分类</li></nuxt-link>
+          <nuxt-link to="/ranking"><li>排行榜</li></nuxt-link>
         </ul>
       </div>
 
@@ -164,6 +165,10 @@ export default {
         align-items: center; */
         @include clearfix;
 
+        .nuxt-link-exact-active {
+          color: #00d564;
+        }
+
         li {
           float: left;
           margin-left: 35px;
@@ -172,12 +177,13 @@ export default {
           margin-top: auto;
           margin-bottom: auto;
 
-          a {
-            color: black;
-            &:hover {
-              color: #00d564;
-            }
+          &:hover {
+            color: #00d564;
           }
+          /* a {
+            // color: black;
+            
+          } */
         }
       } 
     }

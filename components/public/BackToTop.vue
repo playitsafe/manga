@@ -6,6 +6,9 @@
 </template>
 
 <script>
+import throttle from 'lodash/throttle';
+let throttleHandler;
+
 export default {
   data() {
     return {
@@ -13,15 +16,16 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.scrollHandler);
+    throttleHandler = throttle(this.scrollHandler, 500);
+    window.addEventListener('scroll', throttleHandler);
   },
   destroyed() {
-    window.removeEventListener('scroll', this.scrollHandler);
+    window.removeEventListener('scroll', throttleHandler);
   },
   methods: {
     scrollHandler() {
       if (window.scrollY > 300) {
-        console.log('true')
+        console.log('top btn check')
         this.showBtn = true;
       } else if (window.scrollY <= 300) {
         this.showBtn = false;
