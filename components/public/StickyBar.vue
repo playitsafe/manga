@@ -84,27 +84,6 @@ export default {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       this.isFixed = scrollTop > 100 ? true : false;
     },
-    // checkNavHighlight() {
-    //   console.log('check highlight fired!!!')
-    //   for(let nav of this.navItems) {
-    //     let i = this.navItems.indexOf(nav);
-    //     if (document.querySelector(nav.id)) {
-    //       let el = document.querySelector(nav.id);
-    //       // let nextEl = document.querySelector(this.navItems[i+1].id);
-    //       let distanceToTop = el.getBoundingClientRect().top;
-    //       // let nextElDistanceToTop = nextEl.getBoundingClientRect().top;
-    //       let windowHeight = document.documentElement.clientHeight || window.innerHeight;
-    //       //console.log('distanceToTop', distanceToTop)
-    //       //console.log('windowHeight', windowHeight)
-    //       if (distanceToTop > 0 && distanceToTop < (windowHeight * 0.5)) {
-    //         this.activeTab = i;
-    //       } else if (distanceToTop > (windowHeight * 0.5) && distanceToTop < windowHeight) {
-    //         this.activeTab = i - 1;
-    //         //console.log('else',i)
-    //       }
-    //     }
-    //   }
-    // },
     onScrollEvent() {
       console.log('OnChangeNavbar Triggered')
       //check for fix bar
@@ -113,7 +92,6 @@ export default {
       //this.checkForFix();
       // check for menu highlight
       // let currentIndex = this.activeTab;
-      
       
       for(let nav of this.navItems) {
         let i = this.navItems.indexOf(nav);
@@ -133,7 +111,6 @@ export default {
           }
         }
       }
-      
      }, 
     // throttleHandler() {
     //   console.log('d')
@@ -195,7 +172,8 @@ export default {
       display: inline-block;
       list-style: none;
       margin: 0 auto;
-
+      min-width: 960px;
+      
       a {
         display: inline-block;
         height: 100%;
