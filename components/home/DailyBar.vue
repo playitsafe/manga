@@ -5,7 +5,7 @@
         <li v-for="(day, i) in days" :key="i" 
           @click="$emit('change-day-img', i)"
           :class="{'dailybar-inner-days-active': i === showDay - 1}">
-          {{day}}
+          {{ day }}
         </li>
       </ul>
       <div class="dailybar-inner-more">
@@ -66,6 +66,7 @@ export default {
 
       &-active {
         background: #44e013;
+        color: #fff !important;
       }
 
       li {
@@ -79,10 +80,8 @@ export default {
           cursor: pointer;
           background: #b4f2a0;
           /* background: #44e013; */
-
         }
       }
-
     }
 
     &-more {

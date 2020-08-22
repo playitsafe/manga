@@ -60,6 +60,12 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: this.item.title + ' - 漫书MangaBook'
+    }
+  },
+  
   // data() {
   //   return {
   //     item: {

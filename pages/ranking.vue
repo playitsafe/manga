@@ -15,6 +15,9 @@ export default {
   components: {
     RankColumn
   },
+  head: {
+    title: '漫画小说排行榜 - 热门漫画，人气小说 | 漫书MangaBook'
+  },
   data() {
     return {
 
@@ -44,10 +47,6 @@ export default {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-
-    &-column {
-      
-    }
   }
 }
 </style>

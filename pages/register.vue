@@ -51,6 +51,9 @@ import { validationMixin } from 'vuelidate';
 
 export default {
   mixins: [validationMixin],
+  head: {
+    title: '注册新用户，加入漫书！ | 漫书MangaBook'
+  },
   data() {
     return {
       email: '',

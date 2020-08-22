@@ -82,5 +82,10 @@ export default {
     // vendor: [
     //   'vuelidate'
     // ]
-  }
+  },
+  loading: '@/components/public/Loading.vue'
+  // loading: {
+  //   color: 'red',
+  //   height: '5px'
+  // }
 }

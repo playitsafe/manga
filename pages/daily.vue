@@ -12,6 +12,9 @@ import DailyMain from '@/components/daily/DailyMain';
 import CompletedMain from '@/components/daily/CompletedMain';
 
 export default {
+  head: {
+    title: '漫话小说每日更新 | 一周最新更新的漫画小说 - 漫书MangaBook'
+  },
   components: {
     StickyBar,
     DailyMain,

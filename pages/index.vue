@@ -19,6 +19,9 @@ import RankContent from '@/components/home/RankContent';
 // import { rankings } from '@/assets/rawData/rank';
 
 export default {
+  head: {
+    title: '漫书MangaBook | 每天更新的漫画书！'
+  },
   components: {
     MainBanner,
     DailyContent,

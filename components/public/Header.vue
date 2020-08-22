@@ -1,9 +1,9 @@
 <template>
-  <div class="my-header" id="my-header">
+  <div id="my-header" class="my-header">
     <div class="header-outer">
       <div class="left-nav">
         <ul>
-          <nuxt-link to="/"><li><img src="imgs/webtoon-logo.jpg" alt="logo"></li></nuxt-link> 
+          <nuxt-link to="/"><li><img src="imgs/logo.png" alt="logo"></li></nuxt-link> 
           <nuxt-link to="/"><li>首页</li></nuxt-link>
           <nuxt-link to="/daily"><li>每日递送</li></nuxt-link>
           <nuxt-link to="/genre"><li>分类</li></nuxt-link>
@@ -37,7 +37,7 @@
             <div class="login-box-inner-username">
               <div class="login-box-inner-username-input"
                 :class="{'error-border': $v.email.$error}">
-                <i class="fas fa-user"></i>
+                <i class="fas fa-user" />
                 <input type="text" placeholder="输入邮箱" v-model.trim="$v.email.$model">
               </div>
               <small class="login-box-inner-username-info"
@@ -99,7 +99,6 @@ export default {
     // fineToLogin() {
     //   return !this.$v.$invalid;
     // },
-    
   },
   methods: {
     listenHandler(e) {
@@ -177,6 +176,11 @@ export default {
           margin-top: auto;
           margin-bottom: auto;
 
+          img {
+            height: 93px;
+            width: 93px;
+          }
+
           &:hover {
             color: #00d564;
           }
@@ -227,8 +231,6 @@ export default {
           text-decoration: none;
           @include hover-pointer;
         }
-
-        
       }
 
       .search {
@@ -258,7 +260,7 @@ export default {
           margin-right: 15px;
           color: #b4b4b4;
           font-size: 16px;
-          
+
           .fa-search {
             padding-right: 13px;
             border-right: 1px solid #b4b4b4;
@@ -303,7 +305,7 @@ export default {
           border-right: 9px solid transparent;
           border-bottom: 15px solid #2c2c2c;
           top: -15px;
-          right: 50px; 
+          right: 50px;
         }
 
         &-inner {

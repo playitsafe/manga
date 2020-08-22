@@ -22,6 +22,9 @@ import ListGrid from '@/components/public/ListGrid';
 import { mapState } from 'vuex';
 
 export default {
+  head: {
+    title: '漫画分类 | 恋爱，少年，古风，奇幻，搞笑，校园，都市，悬疑 | 漫书MangaBook'
+  },
   components: {
     StickyBar,
     ListGrid
