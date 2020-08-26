@@ -11,6 +11,8 @@ import StickyBar from '@/components/public/StickyBar';
 import DailyMain from '@/components/daily/DailyMain';
 import CompletedMain from '@/components/daily/CompletedMain';
 
+import { getFullWeekArr, getColoredObjArr } from '@/utils';
+
 export default {
   head: {
     title: '漫话小说每日更新 | 一周最新更新的漫画小说 - 漫书MangaBook'
@@ -37,6 +39,19 @@ export default {
       // weekArray: []
     }
   },
+  async fetch({ store, app}) {
+    //***get full daily content */
+    const { status:status6, data:dailyContents } = await app.$axios.get('/fullWeek');
+    if (status6 === 200) {
+      store.commit('daily/setDailyContents', getFullWeekArr(dailyContents));
+    }
+
+    //***get completed content */
+    const { status:status7, data:completedItems } = await app.$axios.get('/fullCompleted');
+    if (status7 === 200) {
+      store.commit('daily/setCompletedContents', getColoredObjArr(completedItems.completed));
+    }
+  }
   // metho
   // mounted() {
   //   window.addEventListener('scroll', this.checkScrollForFix);

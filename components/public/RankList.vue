@@ -117,7 +117,7 @@ export default {
 .rank-wrap {
   /* width: ; */
   width: 47%;
-  min-width: 370px;
+  min-width: 3.7rem;
   border-bottom: #e5e5e5;
   /* height: 100px; */
   /* border: 1px solid black; */
@@ -126,39 +126,39 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
+    padding: 0.15rem 0;
     position: relative;
     h3 {
-      font-size: 20px;
+      font-size: 0.2rem;
       font-weight: 700;
       /* @include flex-h-center; */
       
       i {
-        font-size: 15px;
-        padding-left: 5px;
+        font-size: 0.15rem;
+        padding-left: 0.05rem;
       }
     }
 
     &-select {
-      font-size: 16px;
+      font-size: 0.16rem;
       font-weight: 700;
       cursor: pointer;
       color: #6c6c6c;
-      margin-right: 10px;
+      margin-right: 0.1rem;
 
       i {
-        margin-left: 10px;
-        font-size: 13px;
+        margin-left: 0.1rem;
+        font-size: 0.13rem;
         color: #6c6c6c;
       }
     }
     &-dropdown {
-      width: 160px;
+      width: 1.6rem;
       background: #fbfbfb;
       position: absolute;
       right: 0;
-      padding: 10px 0;
-      border: 1px solid #dddddd;
+      padding: 0.1rem 0;
+      border: 0.01rem solid #dddddd;
       top: 100%;
       list-style: none;
       display: flex;
@@ -166,10 +166,10 @@ export default {
       flex-wrap: wrap;
 
       &-item {
-        margin: 8px 0;
+        margin: 0.08rem 0;
         text-align: center;
         flex-shrink: 0;
-        flex-basis: 160px;
+        flex-basis: 1.6rem;
         cursor: pointer;
         &:hover {
           font-weight: 700;
@@ -177,7 +177,7 @@ export default {
       }
 
       .colx2 {
-        flex-basis: 75px;
+        flex-basis: 0.75rem;
       }
 
       .active {
@@ -191,41 +191,6 @@ export default {
 
   &-lists {
     list-style: none;
-
-    /* &-item {
-      border-top: 1px solid #dddddd;
-      display: flex;
-      &-img {
-        height: 98px;
-        width: 92px;
-        background-size: cover;
-        background-position: center;
-        font-size: 33px;
-        font-weight: 700;
-        padding-left: 8px;
-        color: #fff;
-        text-shadow: 1px 1px 1px black;
-      }
-
-      &-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-left: 20px;
-
-        &-category {
-          font-size: 13px;
-        }
-        &-title {
-          font-size: 18px;
-          font-weight: 700;
-        }
-        &-author {
-          font-size: 13px;
-          font-weight: 300;
-        }
-      }
-    } */
   }
   
 

@@ -35,8 +35,8 @@ export default {
   height: 100%;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding-top: 200px;
-  font-size: 30px;
+  padding-top: 2rem;
+  font-size: 0.3rem;
   font-family: sans-serif;
   z-index: 9999;
 
@@ -45,40 +45,40 @@ export default {
     display: inline-block;
     top: 45vh;
     left: 50vw;
-    width: 160px;
-    height: 160px;
+    width: 1.6rem;
+    height: 1.6rem;
     transform: translate(-50%, -50%);
     /* background: pink; */
 
     div {
       position: absolute;
-      top: 66px;
-      width: 20px;
-      height: 20px;
+      top: 0.66rem;
+      width: 0.2rem;
+      height: 0.2rem;
       border-radius: 50%;
       background: #00dc64;
       animation-timing-function: cubic-bezier(0, 1, 1, 0);
     }
 
     div:nth-child(1) {
-      left: 40px;
+      left: 0.4rem;
       animation: lds-ellipsis1 0.6s infinite;
     }
 
     div:nth-child(2) {
-      left: 50px;
+      left: 0.5rem;
       /* background: red; */
       animation: lds-ellipsis2 0.6s infinite;
     }
 
     div:nth-child(3) {
-      left: 86px;
+      left: 0.86rem;
       /* background:pink; */
       animation: lds-ellipsis2 0.6s infinite;
     }
 
     div:nth-child(4) {
-      left: 120px;
+      left: 1.2rem;
       /* background: blue; */
       animation: lds-ellipsis3 0.6s infinite;
     }
@@ -104,7 +104,7 @@ export default {
         transform: translate(0, 0);
       }
       100% {
-        transform: translate(24px, 0);
+        transform: translate(0.24rem, 0);
       }
     }
   }

@@ -77,7 +77,7 @@ export default {
 @import '@/assets/css/util.scss';
 
 .main-banner {
-  height: 492px;
+  height: 4.92rem;
   width: 100%;
   /* background-image: url('/imgs/home_bg.jpg');
   background-size: cover; // contain
@@ -86,36 +86,36 @@ export default {
   @include flex-h-center;
 
   &-inner {
-    height: 492px;
-    min-width: 1110px;
+    height: 4.92rem;
+    min-width: 11.1rem;
     position: relative;
 
     &-big {
-      height: 492px;
-      width: 946px;
+      height: 4.92rem;
+      width: 9.46rem;
       position: absolute;
-      left: -100px;
+      left: -1rem;
       /* overflow: auto; */
       .swiper-pagination {
         /* height: 40px; */
-        width: 200px;
+        width: 2rem;
         position: absolute;
-        left: 110px;
-        bottom: 55px;
+        left: 1.1rem;
+        bottom: 0.55rem;
 
         &-bullet {
-          width: 12px;
-          height: 12px;
+          width: 0.12rem;
+          height: 0.12rem;
           background: #fff;
         }
       }
     }
 
     &-sm1 {
-      height: 208px;
-      width: 314px;
+      height: 2.08rem;
+      width: 3.14rem;
       position: absolute;
-      top: 38px;
+      top: 0.38rem;
       right: 0;
       /* background-image: url('/imgs/corner1.png');
       background-size: cover; // contain
@@ -124,10 +124,10 @@ export default {
     }
 
     &-sm2 {
-      height: 224px;
-      width: 280px;
+      height: 2.24rem;
+      width: 2.8rem;
       position: absolute;
-      bottom: 38px;
+      bottom: 0.38rem;
       right: 0;
       @include img-bg('/imgs/corner2.png', cover, center);
     }

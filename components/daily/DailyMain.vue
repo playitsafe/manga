@@ -53,16 +53,16 @@ export default {
   width: 100%;
   /* height: 1000px; */
   background: #f5f5f5;
-  padding: 20px 0;
+  padding: 0.2rem 0;
 
   &-inner {
-    width: 1200px;
+    width: 12rem;
     margin: 0 auto;
 
     h2 {
-      font-size: 22px;
-      border-bottom: 1px solid #eaeaea;
-      padding-bottom: 20px;
+      font-size: 0.22rem;
+      border-bottom: 0.01rem solid #eaeaea;
+      padding-bottom: 0.2rem;
     }
 
     &-week {
@@ -72,14 +72,14 @@ export default {
       align-items: flex-start;
 
       &-day {
-        padding: 0 4px;
-        width: 162px;
+        padding: 0 0.04rem;
+        width: 1.62rem;
         transition: all ease .2s;
         &.active {
           background: #28DC18;
-          width: 236px;
+          width: 2.36rem;
           color: #fff;
-          padding-bottom: 4px;
+          padding-bottom: 0.04rem;
           /* transition: all ease .2s; */
         }
 
@@ -87,8 +87,8 @@ export default {
           h4 {
             text-align: center;
             /* background: yellow; */
-            font-size: 20px;
-            height: 66px;
+            font-size: 0.2rem;
+            height: 0.66rem;
             @include flex-v-h-center;
             cursor: pointer;
           }
@@ -96,15 +96,15 @@ export default {
           &-list {
             @include flex-column;
             &:last-child {
-              border-bottom: 1px solid #dbdbdb;
+              border-bottom: 0.01rem solid #dbdbdb;
             }
 
             &-grid {
-              border-top: 1px solid #dbdbdb;
-              border-left: 1px solid #dbdbdb;
-              border-right: 1px solid #dbdbdb;
+              border-top: 0.01rem solid #dbdbdb;
+              border-left: 0.01rem solid #dbdbdb;
+              border-right: 0.01rem solid #dbdbdb;
               width: 100%;
-              height: 152px;
+              height: 1.52rem;
             }
           }
 

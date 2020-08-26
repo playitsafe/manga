@@ -1,6 +1,6 @@
 <template>
   <div class="back-totop" v-show="showBtn" @click="toTop">
-    <i class="fa fa-angle-up"></i>
+    <i class="fas fa-chevron-up"></i><br />
     TOP
   </div>
 </template>
@@ -40,17 +40,17 @@ export default {
 
 <style lang="scss">
 .back-totop {
-  height: 55px;
-  width: 55px;
+  height: 0.55rem;
+  width: 0.55rem;
   background: red;
   position: fixed;
-  right: 35px;
-  bottom: 25px;
+  right: 0.35rem;
+  bottom: 0.25rem;
   z-index: 98;
-  border: 1px solid #cecece;
+  border: 0.01rem solid #cecece;
   background: #fff;
   text-align: center;
-  font-size: 15px;
+  font-size: 0.15rem;
   cursor: pointer;
   opacity: .5;
   transition: all ease .2s;
@@ -60,7 +60,11 @@ export default {
   }
 
   i {
-    font-size: 30px;
+    line-height: 0.2rem;
+    font-size: 0.3rem;
+    font-weight: 700;
+    /* position: absolute;
+    top: -15px; */
   }
 }
 </style>

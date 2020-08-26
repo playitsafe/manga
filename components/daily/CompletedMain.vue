@@ -32,29 +32,27 @@ export default {
   background: #f5f5f5;
 
   &-inner {
-    max-width: 1200px;
+    max-width: 12rem;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 0.4rem 0;
     h2 {
-      font-size: 22px;
+      font-size: 0.22rem;
       /* border-bottom: 1px solid #eaeaea; */
-      padding-bottom: 20px;
+      padding-bottom: 0.2rem;
     }
 
     &-view {
-      /* height: 1000px; */
       list-style: none;
-      /* background: pink; */
       display: flex;
       justify-content: space-evenly;
       align-content: flex-start;
       flex-wrap: wrap;
 
       &-grid {
-        height: 152px;
-        width: 228px;
-        border: 1px solid #eaeaea;
-        margin-bottom: 15px;
+        height: 1.52rem;
+        width: 2.28rem;
+        border: 0.01rem solid #eaeaea;
+        margin-bottom: 0.15rem;
       }
     }
   }

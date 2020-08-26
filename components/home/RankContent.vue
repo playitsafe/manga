@@ -56,8 +56,8 @@ export default {
   &-inner {
     @include flex-h-center;
     justify-content: space-between;
-    width: 1110px;
-    margin: 50px 0;
+    width: 11.1rem;
+    margin: 0.5rem 0;
 
   }
 }

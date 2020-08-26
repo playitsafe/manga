@@ -39,10 +39,10 @@ export default {
 @import '@/assets/css/util.scss';
 
 .rankwrap {
-  border-top: 1px solid #eaeaea;
-  padding-bottom: 100px;
+  border-top: 0.01rem solid #eaeaea;
+  padding-bottom: 1rem;
   &-inner {
-    max-width: 1110px;
+    max-width: 11.1rem;
     /* height: 200px; */
     margin: 0 auto;
     display: flex;

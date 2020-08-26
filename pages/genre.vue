@@ -94,6 +94,13 @@ export default {
     ...mapState({
       genreCollection: state => state.genre.genreContents
     })
+  },
+  async fetch({ store, app}) {
+    //***get genre content */
+    const { status:status8, data:genreObj } = await app.$axios.get('/genre');
+    if (status8 === 200) {
+      store.commit('genre/setGenreContents', genreObj);
+    }
   }
 }
 </script>
@@ -104,17 +111,17 @@ export default {
   background: #f5f5f5;
 
   &-wrap {
-    padding-top: 50px;
+    padding-top: 0.5rem;
     margin: 0 auto;
-    width: 1140px;
+    width: 11.4rem;
     /* background: pink; */
 
     &-sub {
-      margin-bottom: 40px;
+      margin-bottom: 0.4rem;
 
       h3 {
-        font-size: 18px;
-        padding: 15px 0;
+        font-size: 0.18rem;
+        padding: 0.15rem 0;
       }
 
       &-content {
@@ -124,10 +131,10 @@ export default {
         justify-content: flex-start;
 
         li {
-          width: 210px;
-          height: 210px;
-          margin-right: 15px;
-          margin-bottom: 15px;
+          width: 2.1rem;
+          height: 2.1rem;
+          margin-right: 0.15rem;
+          margin-bottom: 0.15rem;
           /* align-content: flex-start; */
         }
       }

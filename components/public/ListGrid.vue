@@ -42,14 +42,14 @@ export default {
   border-right: 1px solid #dbdbdb; */
   background: #fff;
   color: #000000;
-  padding: 10px;
+  padding: 0.1rem;
   position: relative;
-  background-size: 126px 126px;
+  background-size: 1.26rem 1.26rem;
   background-repeat: no-repeat;
   background-position: right bottom;
 
   &-category {
-    font-size: 14px;
+    font-size: 0.14rem;
   }
 
   /* &.large {
@@ -60,17 +60,17 @@ export default {
   &:not(.large) {
     .daily-grid-category {
       position: absolute;
-      left: 10px;
-      bottom: 10px;
+      left: 0.1rem;
+      bottom: 0.1rem;
     }
   } 
 
   h3 {
-    font-size: 18px;
+    font-size: 0.18rem;
   }
 
   &-author {
-    font-size: 13px;
+    font-size: 0.13rem;
     font-weight: 300;
   }
 
@@ -81,14 +81,14 @@ export default {
     &-new, &-update, &-suspend, &-ended {
       font-size: 14px;
       display: inline-block;
-      width: 28px;
-      height: 28px;
+      width: 0.28rem;
+      height: 0.28rem;
       display: grid;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      margin-right: 4px;
-      margin-top: 10px;
+      margin-right: 0.04rem;
+      margin-top: 0.1rem;
     }
 
     &-new {
@@ -99,13 +99,13 @@ export default {
     &-update {
       background: #28DC18;
       color: #fff;
-      font-size: 13px;
+      font-size: 0.13rem;
     }
     
     &-suspend {
       background: #939393;
       color: #fff;
-      font-size: 13px;
+      font-size: 0.13rem;
     }
     &-ended {
       background: #939393;
@@ -115,8 +115,8 @@ export default {
 
   &-likes {
     position: absolute;
-    left: 10px;
-    bottom: 10px;
+    left: 0.1rem;
+    bottom: 0.1rem;
     color: #28DC18;
   }
   /* img {

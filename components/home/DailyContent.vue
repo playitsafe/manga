@@ -43,14 +43,14 @@ export default {
 @import '@/assets/css/util.scss';
 .daily-content {
   background: #f4f4f4;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 0.01rem solid #c2c2c2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 0.3rem;
 
   &-wrap {
-    width: 1110px;
+    width: 11.1rem;
   }
 }
 </style>

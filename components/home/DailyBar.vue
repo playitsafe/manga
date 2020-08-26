@@ -8,9 +8,7 @@
           {{ day }}
         </li>
       </ul>
-      <div class="dailybar-inner-more">
-        <a href="#">查看更多</a>
-      </div>
+      <a href="#" class="dailybar-inner-more">查看更多</a>
     </div>
   </div>
 </template>
@@ -42,25 +40,24 @@ export default {
 .dailybar {
   position: relative;
   /* z-index: 99; */
-  height: 62px;
+  height: 0.62rem;
   width: 100%;
   @include flex-h-center;
-  box-shadow: 0 10px 20px rgba(#5f5f5f, .2);
-  margin-bottom: 20px;
+  box-shadow: 0 0.1rem 0.2rem rgba(#5f5f5f, .2);
+  margin-bottom: 0.2rem;
   background: #fff;
 
   &-inner {
     height: 100%;
-    min-width: 1110px;
+    min-width: 11.1rem;
     position: relative;
 
     &-days {
       list-style: none;
       height: 100%;
-      font-size: 19px;
       font-weight: 700;
-      padding-left: 150px;
-      padding-right: 200px;
+      padding-left: 1.5rem;
+      padding-right: 2rem;
       display: flex;
       justify-content: center;
 
@@ -72,9 +69,10 @@ export default {
       li {
         color: black;
         float: left;
+        font-size: 0.19rem;
         height: 100%;
         /* margin: ; */
-        padding: 0 30px;
+        padding: 0 0.3rem;
         @include flex-v-center;
         &:hover {
           cursor: pointer;
@@ -86,12 +84,18 @@ export default {
 
     &-more {
       position: absolute;
-      right: 30px;
+      height: 0.2rem;
+      right: 0.3rem;
       top: 50%;
-      transform: translate(0, -50%);
-      border-left: 1px solid #c2c1c1;
-      padding-left: 35px;
-      color: #838383;
+      /* display: inline-block; */
+      padding-left: 0.35rem;
+      display: grid;
+      place-items: center;
+      border-left: 0.01rem solid #c2c1c1;
+      margin: auto 0;
+      line-height: 0.16rem;
+      transform: translateY(-50%);
+      color: #838383; 
       &:hover {
         color: #44e013;
       }

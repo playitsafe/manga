@@ -77,7 +77,7 @@ export default {
 @import '@/assets/css/util.scss';
 
 .footer {
-  border-top: 1px solid #e5e5e5;
+  border-top: 0.01rem solid #e5e5e5;
   background: #f5f5f5;
   /* min-width: 1240px; */
   display: flex;
@@ -85,21 +85,21 @@ export default {
   align-items: center;
 
   &-notice {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 0.01rem solid #e5e5e5;
     width: 100%;
     @include flex-h-center;
 
     &-inner {
       @include flex-v-center;
-      height: 50px;
-      width: 1240px;
-      padding: 20px;
-      font-size: 17px;
+      height: 0.5rem;
+      width: 12.4rem;
+      padding: 0.2rem;
+      font-size: 0.17rem;
   
       &-list{
-        margin-right: 15px;
+        margin-right: 0.15rem;
         i {
-          margin-left: 15px;
+          margin-left: 0.15rem;
         }
       }
   
@@ -108,8 +108,8 @@ export default {
   
         &-date {
           color: #b1b1b1;
-          font-size: 13px;
-          margin-left: 25px;
+          font-size: 0.13rem;
+          margin-left: 0.25rem;
           display: inline-flex;
           align-items: center;
         }
@@ -118,42 +118,42 @@ export default {
   }
 
   &-qrcode {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 0.01rem solid #e5e5e5;
     width: 100%;
     @include flex-h-center;
 
     &-inner {
-      height: 154px;
+      height: 1.54rem;
       @include flex-h-center;
       align-items: center;
 
       &-code {
         @include img-bg('/imgs/qr.png', cover, no-repeat);
         /* background-size: ; */
-        width: 391px;
-        height: 93px;
+        width: 3.91rem;
+        height: 0.93rem;
       }
 
       &-app {
-        margin-left: 17px;
+        margin-left: 0.17rem;
         &-desc {
-          font-size: 16px;
+          font-size: 0.16rem;
         }
         &-btns {
-          margin-top: 20px;
+          margin-top: 0.2rem;
           span {
             color: #fff;
             font-weight: 700;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            height: 30px;
-            width: 102px;
+            height: 0.3rem;
+            width: 1.02rem;
             background: #b1b1b1;
-            border-radius: 15px;
+            border-radius: 0.15rem;
           }
           &-ios {
-            margin-left: 10px;
+            margin-left: 0.1rem;
           }
         }
       }
@@ -162,12 +162,12 @@ export default {
 
   &-menu {
     width: 100%;
-    padding: 25px 0;
+    padding: 0.25rem 0;
     @include flex-h-center;
 
       &-inner {
         list-style: none;
-        width: 550px;
+        width: 5.5rem;
         display: flex;
         justify-content: space-between;
     
@@ -183,8 +183,8 @@ export default {
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            height: 14px;
-            border-right: 1px solid #d6d6d6;
+            height: 0.14rem;
+            border-right: 0.01rem solid #d6d6d6;
           }
         }
     
@@ -194,20 +194,20 @@ export default {
   }
 
   &-company {
-    font-size: 13px;
+    font-size: 0.13rem;
     color: #c5c5c5;
     &-bar {
-      font-size: 10px;
+      font-size: 0.1rem;
       font-weight: 300;
     }
     span {
       display: inline-block;
-      padding: 15px 5px 0 5px;
+      padding: 0.15rem 0.05rem 0 0.05rem;
     }
   }
 
   &-addr {
-    font-size: 14px;
+    font-size: 0.14rem;
     color: #b1b1b1;
 
     &-bar {
@@ -216,16 +216,16 @@ export default {
 
     span {
       display: inline-block;
-      padding: 15px 5px;
+      padding: 0.15rem 0.05rem;
     }
   }
 
   &-reg {
     color: #b1b1b1;
-    font-size: 14px;
-    padding-bottom:35px;
+    font-size: 0.14rem;
+    padding-bottom:0.35rem;
     span {
-      padding: 0 5px;
+      padding: 0 0.05rem;
     }
   }
 }

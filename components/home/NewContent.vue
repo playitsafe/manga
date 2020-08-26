@@ -83,7 +83,7 @@ export default {
 
 .new {
   background: #f4f4f4;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 0.01rem solid #c2c2c2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,20 +91,20 @@ export default {
 
   &-title {
     text-align: center;
-    font-size: 22px;
+    font-size: 0.22rem;
     font-weight: 700;
-    padding-top: 30px;
+    padding-top: 0.3rem;
   }
 
   &-carousel {
-    width: 1230px;
+    width: 12.3rem;
     position: relative;
-    padding-bottom: 25px;
+    padding-bottom: 0.25rem;
 
     .swiper-container {
-      width: 1110px;
+      width: 11.1rem;
       /* overflow: visible; */
-      padding: 30px 0;
+      padding: 0.3rem 0;
     }
 
     .swiper-button-prev, .swiper-button-next {
@@ -118,13 +118,13 @@ export default {
 
     .swiper-pagination {
       position: absolute;
-      bottom: 0px;
+      bottom: 0rem;
 
       &-bullet {
         display: inline-block;
-        height: 12px;
-        width: 12px;
-        margin: 0 6px !important;
+        height: 0.12rem;
+        width: 0.12rem;
+        margin: 0 0.06rem !important;
 
         &-active {
           background: #000000;

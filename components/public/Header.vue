@@ -151,7 +151,7 @@ export default {
     /* display: flex; */
     justify-content: space-between;
     /* align-items: center; */
-    height: 100px;
+    height: 1rem;
     width: 1680px;
     max-width: 1680px;
     /* margin-left: auto;
@@ -286,6 +286,7 @@ export default {
         z-index: 99;
         color: #ffffff;
         padding: 20px;
+        font-size: 0.16rem;
 
         &-close {
           position: absolute;

@@ -89,54 +89,56 @@ export default {
 
 .register {
   background: #f5f5f5;
-  padding: 40px 0;
+  padding: 0.4rem 0;
 
   h3 {
-    width: 1110px;
-    margin: 0 auto 15px auto;
+    width: 11.1rem;
+    margin: 0 auto 0.15rem auto;
     font-weight: 700;
+    font-size: .22rem;
   }
 
   &-inner {
-    width: 1110px;
-    min-width: 1110px;
+    width: 11.1rem;
+    min-width: 11.1rem;
     background: #ffffff;
-    padding: 40px 0;
+    padding: 0.4rem 0;
     margin: 0 auto;
 
     &-form {
       @include flex-column;
       margin: 0 auto;
       align-items: flex-start;
-      width: 770px;
+      width: 7.7rem;
       
       &-email, &-password, &-repeat, &-username {
         @include flex-column;
         width: 100%;
-        height: 85px;
-        margin-bottom: 35px;
+        height: 0.85rem;
+        margin-bottom: 0.35rem;
         input {
           @include remove-input-style;
-          font-size: 18px;
-          border-bottom: 1px solid #eaeaea;
+          font-size: 0.18rem;
+          border-bottom: 0.01rem solid #eaeaea;
           &::placeholder {
             color: #dddddd;
           }
           &:focus {
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 0.01rem solid #eaeaea;
           }
         }
 
         input.error {
-          border-bottom: 1px solid #ff4e4e;
+          border-bottom: 0.01rem solid #ff4e4e;
           &:focus {
-            border-bottom: 1px solid #ff4e4e;
+            border-bottom: 0.01rem solid #ff4e4e;
           }
         }
 
         label {
-          font-size: 19px;
+          font-size: 0.19rem;
           font-weight: 700;
+          margin-bottom: 0.1rem;
         }
 
         small {
@@ -145,20 +147,21 @@ export default {
       }
 
       &-consent {
-        margin-top: -25px;
+        margin-top: 0.25rem;
       }
       
       &-submit {
         display: inline-block;
-        margin: 15px auto;
-        padding: 15px 40px;
-        font-size: 18px;
+        margin: 0.15rem auto;
+        padding: 0.15rem 0.4rem;
+        font-size: 0.18rem;
         color: #ffffff;
-        border-radius: 45px;
-        letter-spacing: 10px;
+        border-radius: 0.45rem;
+        letter-spacing: 0.1rem;
         font-weight: 700;
         &:hover, &:visited, &:target, &:active, &:focus {
           color: #ffffff;
+          font-size: 0.18rem;
         }
 
         &.valid {

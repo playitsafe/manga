@@ -149,20 +149,20 @@ export default {
 
 .sticky {
   background: #fff;
-  border-top: 1px solid #eaeaea;
-  border-bottom: 1px solid #eaeaea;
+  border-top: 0.01rem solid #eaeaea;
+  border-bottom: 0.01rem solid #eaeaea;
   z-index: 98;
 
   &.fixed {
     position: fixed;
     width: 100%;
     top: 0;
-    box-shadow: 0 5px 5px #eaeaea;
+    box-shadow: 0 0.05rem 0.05rem #eaeaea;
   }
 
   &-inner {
-    max-width: 1270px;
-    height: 67px;
+    max-width: 12.7rem;
+    height: 0.67rem;
     margin: 0 auto;
     display: flex;
     position: relative;
@@ -172,7 +172,7 @@ export default {
       display: inline-block;
       list-style: none;
       margin: 0 auto;
-      min-width: 960px;
+      min-width: 9.6rem;
       
       a {
         display: inline-block;
@@ -191,10 +191,10 @@ export default {
       li {
         float: left;
         height: 100%;
-        padding: 0 25px;
+        padding: 0 0.25rem;
         /* text-align: center; */
         /* vertical-align: middle; */
-        font-size: 18px;
+        font-size: 0.18rem;
         display: flex;
         align-items: center;
       }
@@ -211,25 +211,25 @@ export default {
       height: 100%;
       @include flex-v-center;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 0.18rem;
       font-weight: 700;
-      width: 115px;
+      width: 1.15rem;
 
       i {
-        font-size: 20px;
-        margin-left: 10px;
+        font-size: 0.2rem;
+        margin-left: 0.1rem;
       }
     }
 
     &-dropdown {
-      width: 150px;
-      height: 160px;
+      width: 1.5rem;
+      height: 1.6rem;
       background: #fff;
       z-index: 99;
       position: absolute;
       top: 67px;
       right: 0;
-      border: 1px solid #eaeaea;
+      border: 0.01rem solid #eaeaea;
 
       list-style: none;
       @include flex-column;
@@ -237,7 +237,7 @@ export default {
       justify-content: center;
 
       li {
-        padding: 6px 0;
+        padding: 0.06rem 0;
         cursor: pointer;
       }
 
@@ -247,7 +247,7 @@ export default {
 
 .holder {
   width: 100%;
-  height: 67px;
+  height: 0.67rem;
 }
 
 </style>

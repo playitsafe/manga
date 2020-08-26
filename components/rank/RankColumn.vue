@@ -66,14 +66,14 @@ export default {
 <style lang="scss">
 
 .rank-column {
-  max-width: 525px;
-  min-width: 482px;
+  max-width: 5.25rem;
+  min-width: 4.82rem;
   width: 100%;
 
   h3 {
-    font-size: 16px;
-    padding: 30px 0;
-    border-bottom: 1px solid #eaeaea;
+    font-size: 0.16rem;
+    padding: 0.3rem 0;
+    border-bottom: 0.01rem solid #eaeaea;
   }
 
   &-categories {
@@ -81,9 +81,9 @@ export default {
     flex-wrap: wrap;
     display: flex;
     justify-content: flex-start;
-    padding: 15px 35px;
-    height: 100px;
-    border-bottom: 1px solid #eaeaea;
+    padding: 0.15rem 0.35rem;
+    height: 1rem;
+    border-bottom: 0.01rem solid #eaeaea;
 
     /* &:after {
       content: '';
@@ -92,15 +92,15 @@ export default {
     span {
       /* padding: 5px 20px; */
       display: inline-block;
-      margin: 5px 20px;
+      margin: 0.05rem 0.2rem;
       cursor: pointer;
       color: #6c6c6c;
-      height: 26px;
+      height: 0.26rem;
       box-sizing: border-box;
 
       &.active {
         color: #11d300;
-        border-bottom: 2px solid #11d300;
+        border-bottom: 0.02rem solid #11d300;
       }
       &:hover {
         color: #11d300;
@@ -109,17 +109,17 @@ export default {
   }
 
   &-first {
-    height: 200px;
-    background-size: 200px 200px;
+    height: 2rem;
+    background-size: 2rem 2rem;
     background-repeat: no-repeat;
     background-position: right bottom;
     display: flex;
-    padding: 25px 4px;
+    padding: 0.25rem 0.04rem;
 
     &-num {
-      font-size: 60px;
-      line-height: 50px;
-      padding-right: 15px;
+      font-size: 0.6rem;
+      line-height: 0.5rem;
+      padding-right: 0.15rem;
       font-weight: 700;
     }
 
@@ -127,20 +127,20 @@ export default {
       display: flex;
       flex-direction: column;
       &-category {
-        font-size: 13px;
+        font-size: 0.13rem;
       }
       &-title {
-        font-size: 23px;
+        font-size: 0.23rem;
         font-weight: 600;
       }
-      &-author {
+      /* &-author {
 
-      }
+      } */
       &-desc {
-        margin-top: 5px;
-        font-size: 14px;
-        line-height: 16px;
-        max-width: 310px;
+        margin-top: 0.05rem;
+        font-size: 0.14rem;
+        line-height: 0.16rem;
+        max-width: 3.1rem;
       }
     }
   }

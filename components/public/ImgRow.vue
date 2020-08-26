@@ -55,12 +55,12 @@ export default {
     /* width: 1110px; */
     display: flex;
     justify-content: space-between;
-    margin-top: 15px;
+    margin-top: 0.15rem;
 
     &-grid {
       float: left;
       position: relative;
-      height: 210px;
+      height: 2.1rem;
       /* margin: 7.5px; */
       /* transition: all ease .3s; */
         
@@ -108,7 +108,7 @@ export default {
         height: 100%;
         width: 100%;
         background: transparent;
-        padding: 15px 15px 15px 20px;
+        padding: 0.15rem 0.15rem 0.15rem 0.2rem;
         
         h5 {
           font-size: 18px;
@@ -118,7 +118,7 @@ export default {
 
         i, &-likes {
           color: #44e013;
-          font-size: 14px;
+          font-size: 0.14rem;
         }
 
         &-icongroup {
@@ -126,58 +126,58 @@ export default {
           &-new {
             background: black;
             color: #44e013;
-            font-size: 16px;
+            font-size: 0.16rem;
             font-weight: 700;
             text-align: center;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 15px;
-            margin-top: 5px;
-            margin-left: -3px;
-            margin-right: 6px;
+            width: 0.3rem;
+            height: 0.3rem;
+            line-height: 0.3rem;
+            border-radius: 0.15rem;
+            margin-top: 0.05rem;
+            margin-left: -0.03rem;
+            margin-right: 0.06rem;
           }
 
           &-ended {
             background: #ebebeb;
             color: #44e013;
-            font-size: 16px;
+            font-size: 0.16rem;
             font-weight: 700;
             text-align: center;
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 15px;
-            margin-top: 5px;
-            margin-left: -3px;
-            margin-right: 6px;
+            width: 0.3rem;
+            height: 0.3rem;
+            line-height: 0.3rem;
+            border-radius: 0.15rem;
+            margin-top: 0.05rem;
+            margin-left: -0.03rem;
+            margin-right: 0.06rem;
           }
 
           &-updated {
             background: #44e013;
             color: #fff;
-            font-size: 10px;
+            font-size: 0.1rem;
             text-align: center;
             /* @include flex-h-center; */
-            width: 30px;
-            height: 30px;
-            line-height: 30px;
-            border-radius: 15px;
-            margin-top: 5px;
-            margin-left: -3px;
+            width: 0.3rem;
+            height: 0.3rem;
+            line-height: 0.3rem;
+            border-radius: 0.15rem;
+            margin-top: 0.05rem;
+            margin-left: -0.03rem;
           }
 
         }
 
         &-category {
           position: absolute;
-          left: 15px;
-          bottom: 10px;
-          font-size: 14px;
+          left: 0.15rem;
+          bottom: 0.1rem;
+          font-size: 0.14rem;
           font-weight: 700;
           background: #fff;
-          border-radius: 3px;
-          padding: 0 3px;
+          border-radius: 0.03rem;
+          padding: 0 0.03rem;
         }
 
         &-author {
@@ -187,9 +187,9 @@ export default {
           &-border {
             position: absolute;
             left: 0;
-            bottom: -10px;
-            width: 18px;
-            border-bottom: 1px solid #818080;
+            bottom: -0.1rem;
+            width: 0.18rem;
+            border-bottom: 0.01rem solid #818080;
           }
         }
 
@@ -197,15 +197,15 @@ export default {
           position: absolute;
           @include visibility-none;
           color: #fff;
-          font-size: 13px;
-          top: 80px;
-          padding-right: 20px;
+          font-size: 0.13rem;
+          top: 0.8rem;
+          padding-right: 0.2rem;
         }
 
         &-intro4lg {
           color: #fff;
-          font-size: 13px;
-          padding: 15px 20px 5px 0px;
+          font-size: 0.13rem;
+          padding: 0.15rem 0.2rem 0.05rem 0rem;
         }
       }
 
@@ -220,10 +220,10 @@ export default {
         &-author {
           @include visibility-show;
           color: #fff;
-          font-size: 13px;
+          font-size: 0.13rem;
           /* font-family: sans-serif; */
           font-weight: 300;
-          padding-top: 3px;
+          padding-top: 0.03rem;
         }
 
         &-intro {

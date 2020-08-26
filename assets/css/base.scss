@@ -3,6 +3,29 @@
 html {
   padding: env(safe=area-inset);
   scroll-behavior: smooth;
+  /* font-size: 10px; use percentage instead 10/16=.625
+    1rem = 10px;*/
+  // font-size: 62.5% !important; 
+  font-size: 625%;
+}
+
+@media  (min-width:360px) and (max-width:374px) {
+  html { font-size: 703%; }
+}
+@media  (min-width:375px) and (max-width:383px) {
+  html { font-size: 732.4%; }
+}
+@media  (min-width:384px) and (max-width:399px) {
+  html { font-size: 750%; }
+}
+@media  (min-width:400px) and (max-width:413px) {
+  html { font-size: 781.25%; }
+}
+@media  (min-width:414px) and (max-width:431px){
+  html { font-size: 808.6%; }
+}
+@media  (min-width:432px) and (max-width:479px){
+  html { font-size: 843.75%; }
 }
 
 /*-- Prevent Horizontal Scrolling & Font Style --*/
@@ -20,9 +43,15 @@ html, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 0.16rem;
 }
 
 a, a:hover, a:focus {
   text-decoration: none;
   color: inherit;
+  font-size: 0.16rem;
+}
+
+small {
+  font-size: 0.14rem;
 }

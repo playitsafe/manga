@@ -32,37 +32,37 @@ export default {
 .rank-item-lists {
   &-item {
     &.last {
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 0.01rem solid #dddddd;
     }
-    border-top: 1px solid #dddddd;
+    border-top: 0.01rem solid #dddddd;
     display: flex;
     &-img {
-      height: 98px;
-      width: 92px;
+      height: 0.98rem;
+      width: 0.92rem;
       background-size: cover;
       background-position: center;
-      font-size: 33px;
+      font-size: 0.33rem;
       font-weight: 700;
-      padding-left: 8px;
+      padding-left: 0.08rem;
       color: #fff;
-      text-shadow: 1px 1px 1px black;
+      text-shadow: 0.01rem 0.01rem 0.01rem black;
     }
 
     &-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin-left: 20px;
+      margin-left: 0.2rem;
 
       &-category {
-        font-size: 13px;
+        font-size: 0.13rem;
       }
       &-title {
-        font-size: 18px;
+        font-size: 0.18rem;
         font-weight: 700;
       }
       &-author {
-        font-size: 13px;
+        font-size: 0.13rem;
         font-weight: 300;
       }
     }

@@ -48,16 +48,16 @@ export default {
 
 .category {
   background: #f4f4f4;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 0.01rem solid #c2c2c2;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 0.3rem;
 
   &-title {
-    font-size: 22px;
+    font-size: 0.22rem;
     font-weight: 700;
-    padding: 30px 0;
+    padding: 0.3rem 0;
     @include flex-v-center;
 
     &:hover {
@@ -65,23 +65,25 @@ export default {
     }
     
     i {
-      font-size: 16px;
-      margin-left: 10px;
+      font-size: 0.16rem;
+      margin-left: 0.1rem;
     }
   }
 
   &-main {
     &-row {
-      width: 1110px;
+      width: 11.1rem;
       display: flex;
-      /* margin: 7.5px 0; */
-      /* justify-content: space-between; */
       &-head {
-        margin: 15px 15px 0 0;
-        height: 210px;
-        width: 210px;
-        padding: 20px;
+        margin: 0.15rem 0.15rem 0 0;
+        height: 2.1rem;
+        width: 2.1rem;
+        padding: 0.2rem;
         position: relative;
+
+        h4 {
+          font-size: 0.25rem;
+        }
 
         h4, i, p {
           color: #fff;
@@ -89,18 +91,18 @@ export default {
 
         i {
           position: absolute;
-          right: 20px;
-          top: 27px;
+          right: 0.2rem;
+          top: 0.27rem;
         }
 
         p {
           position: absolute;
-          bottom: 20px;
+          bottom: 0.2rem;
         }
       }
 
       &-body {
-        width: 885px;
+        width: 8.85rem;
       }
     }
   }

@@ -45,6 +45,7 @@ export default {
   plugins: [
     // {src: '@/plugins/vue-awesome-swiper.js', mode: 'client'}
     //'@/plugins/vuelidate.client.js'
+    '~/plugins/axios.js',
   ],
   /*
   ** Auto import components
