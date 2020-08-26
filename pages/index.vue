@@ -89,34 +89,50 @@ export default {
     }
   },
   async fetch({ store, app }) {
-    //***get main banner swiper */
-    const { status, data: {banners} } = await app.$axios.get('/mainBanner');
-    store.commit('home/setMainBanners', status === 200 ? banners : []);
+    let [ banners, dailyData, newImgs, cateImgs, rankImgs ] = await Promise.all([
+      app.$axios.get('/mainBanner').then( res => res.status === 200 ? res.data.banners : [] ),
+      app.$axios.get('/dailyImgs').then( res => res.status === 200 ? res.data : {} ),
+      app.$axios.get('/latest').then( res => res.status === 200 ? res.data : {} ),
+      app.$axios.get('/categoryImgs').then( res => res.status === 200 ? res.data : {} ),
+      app.$axios.get('/rank').then( res => res.status === 200 ? res.data : {} )
+    ]);
 
-    //***get daily content */
-    const { status:status2, data } = await app.$axios.get('/dailyImgs');
+    store.commit('home/setMainBanners', banners);
+    store.commit('home/setDailyImgs', getDailyContentArray(dailyData));
+    store.commit('home/setNewImgs', getNewContentArray(newImgs));
+    store.commit('home/setCategoryImgs', getCategoryArray(cateImgs));
+    store.commit('home/setRankings', addColor(rankImgs));
 
-    if (status2 === 200) {
-      store.commit('home/setDailyImgs', getDailyContentArray(data));
-    }
+
+
+    // //***get main banner swiper */
+    // const { status, data: {banners} } = await app.$axios.get('/mainBanner');
+    // store.commit('home/setMainBanners', status === 200 ? banners : []);
+
+    // //***get daily content */
+    // const { status:status2, data:dailyData } = await app.$axios.get('/dailyImgs');
+
+    // if (status2 === 200) {
+    //   store.commit('home/setDailyImgs', getDailyContentArray(dailyData));
+    // }
     
-    //***get latest content */
-    const { status:status3, data:newImgs } = await app.$axios.get('/latest');
-    if (status3 === 200) {
-      store.commit('home/setNewImgs', getNewContentArray(newImgs));
-    }
+    // //***get latest content */
+    // const { status:status3, data:newImgs } = await app.$axios.get('/latest');
+    // if (status3 === 200) {
+    //   store.commit('home/setNewImgs', getNewContentArray(newImgs));
+    // }
 
-    //***get category content */
-    const { status:status4, data:cateImgs } = await app.$axios.get('/categoryImgs');
-    if (status4 === 200) {
-      store.commit('home/setCategoryImgs', getCategoryArray(cateImgs));
-    }
+    // //***get category content */
+    // const { status:status4, data:cateImgs } = await app.$axios.get('/categoryImgs');
+    // if (status4 === 200) {
+    //   store.commit('home/setCategoryImgs', getCategoryArray(cateImgs));
+    // }
 
-    //***get rank content */
-    const { status:status5, data:rankImgs } = await app.$axios.get('/rank');
-    if (status5 === 200) {
-      store.commit('home/setRankings', addColor(rankImgs));
-    }
+    // //***get rank content */
+    // const { status:status5, data:rankImgs } = await app.$axios.get('/rank');
+    // if (status5 === 200) {
+    //   store.commit('home/setRankings', addColor(rankImgs));
+    // }
   }
 }
 </script>

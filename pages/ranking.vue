@@ -27,9 +27,6 @@ export default {
     ...mapState({
       rankings: state => state.home.rankings
     })
-  },
-  methods: {
-
   }
 }
 </script>

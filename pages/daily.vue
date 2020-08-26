@@ -40,17 +40,24 @@ export default {
     }
   },
   async fetch({ store, app}) {
-    //***get full daily content */
-    const { status:status6, data:dailyContents } = await app.$axios.get('/fullWeek');
-    if (status6 === 200) {
-      store.commit('daily/setDailyContents', getFullWeekArr(dailyContents));
-    }
+    let [ dailyContents, completedItems ] = await Promise.all([
+      app.$axios.get('/fullWeek').then( res => res.status === 200 ? res.data : {} ),
+      app.$axios.get('/fullCompleted').then( res => res.status === 200 ? res.data.completed : [] )
+    ]);
+    store.commit('daily/setDailyContents', getFullWeekArr(dailyContents));
+    store.commit('daily/setCompletedContents', getColoredObjArr(completedItems));
 
-    //***get completed content */
-    const { status:status7, data:completedItems } = await app.$axios.get('/fullCompleted');
-    if (status7 === 200) {
-      store.commit('daily/setCompletedContents', getColoredObjArr(completedItems.completed));
-    }
+    // //***get full daily content */
+    // const { status:status6, data:dailyContents } = await app.$axios.get('/fullWeek');
+    // if (status6 === 200) {
+    //   store.commit('daily/setDailyContents', getFullWeekArr(dailyContents));
+    // }
+
+    // //***get completed content */
+    // const { status:status7, data:completedItems } = await app.$axios.get('/fullCompleted');
+    // if (status7 === 200) {
+    //   store.commit('daily/setCompletedContents', getColoredObjArr(completedItems.completed));
+    // }
   }
   // metho
   // mounted() {
