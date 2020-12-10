@@ -73,7 +73,13 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://www.fastmock.site/mock/9b87a85e81beae86ed808b0dedf24d69/manga'
+    // baseURL: 'https://www.fastmock.site/mock/9b87a85e81beae86ed808b0dedf24d69/manga'
+    baseURL: 'http://api.mangabook.me/api',
+    headers: {
+      common: {
+        'no-sign-check': 'TRUE'
+      }
+    }
   },
   /*
   ** Build configuration
