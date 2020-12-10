@@ -1,19 +1,24 @@
 <template>
-  <div class="main">
+  <div class="index">
     <MainBanner />
-    <DailyContent />
+    <div class="index-section-wrapper">
+      <HomeSection v-for="section in sections" :key="section.id" :content="section" />
+    </div>
+    <!-- <DailyContent />
     <NewContent />
     <CategoryContent />
-    <RankContent />
+    <RankContent /> -->
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import MainBanner from '@/components/home/MainBanner';
-import DailyContent from '@/components/home/DailyContent';
-import NewContent from '@/components/home/NewContent';
-import CategoryContent from '@/components/home/CategoryContent';
-import RankContent from '@/components/home/RankContent';
+import HomeSection from '@/components/home/HomeSection';
+// import DailyContent from '@/components/home/DailyContent';
+// import NewContent from '@/components/home/NewContent';
+// import CategoryContent from '@/components/home/CategoryContent';
+// import RankContent from '@/components/home/RankContent';
 
 import { getDailyContentArray, getNewContentArray, getCategoryArray, addColor } from '@/utils';
 
@@ -26,10 +31,15 @@ export default {
   },
   components: {
     MainBanner,
-    DailyContent,
-    NewContent,
-    CategoryContent,
-    RankContent,
+    // DailyContent,
+    // NewContent,
+    // CategoryContent,
+    // RankContent,
+  },
+  computed: {
+    ...mapState({
+      sections: state => state.home.homeSections
+    })
   },
   data() {
     return {
@@ -39,69 +49,29 @@ export default {
       rankings: {}
     }
   },
-  // mounted() {
-  //   console.log('rankings', rankings)
-  // },
-  asyncData() {
-    // const colors = ['#37308c', '#fd337f','#8b00e9','#00b19a','#046afa','#eea802','#18b636', '#8e702f'];
 
-    //get categoryImgs
-    // let cateImgs = [];
-
-    // get categoryData 
-    // for(let key in Imgs.categoryImgs) {
-    //   let randomIndex = Math.floor(Math.random() * colors.length);
-    //   for(let img of Imgs.categoryImgs[key].imgs) {
-    //     img.color = colors[randomIndex];
-    //   }
-    //   cateImgs.push(Imgs.categoryImgs[key]);
-    // }
-
-    //cateImgs:
-    // [{cateTitle:'', category:'', imgs:[]}, {}]
-
-    //add color to rankings
-    // for(let cate in rankings) {
-    //   for(let key in rankings[cate]) {
-    //     let randomIndex = Math.floor(Math.random() * colors.length);
-    //     rankings[cate][key].color = colors[randomIndex];
-    //   }
-    // }
-
-    // console.log(rankings)
-
-    //rankings
-    // {
-    //   beCategory:{
-    //     love: {category: '', rank: [{},...{}]}
-    //     ...
-    //   },
-    //   byAge: {
-    //     m10: {}
-    //   }
-    // }
-
-    return {
-      // dailyImgs: dailyImgArray,
-      // newImgs: newImgArray,
-      // categoryImgs: cateImgs,
-      // rankings
-    }
-  },
   async fetch({ store, app }) {
-    let [ banners, dailyData, newImgs, cateImgs, rankImgs ] = await Promise.all([
-      app.$axios.get('/mainBanner').then( res => res.status === 200 ? res.data.banners : [] ),
-      app.$axios.get('/dailyImgs').then( res => res.status === 200 ? res.data : {} ),
-      app.$axios.get('/latest').then( res => res.status === 200 ? res.data : {} ),
-      app.$axios.get('/categoryImgs').then( res => res.status === 200 ? res.data : {} ),
-      app.$axios.get('/rank').then( res => res.status === 200 ? res.data : {} )
+    let [ banners, sections ] = await Promise.all([
+      app.$axios.get('/homepage/promotions').then( res => res.status === 200 && res.data.status === 'success' ? res.data.data.banners : [] ),
+      app.$axios.get('/homepage/recommendations').then( res => res.status === 200 && res.data.status === 'success' ? res.data.data: [] ),
     ]);
 
     store.commit('home/setMainBanners', banners);
-    store.commit('home/setDailyImgs', getDailyContentArray(dailyData));
-    store.commit('home/setNewImgs', getNewContentArray(newImgs));
-    store.commit('home/setCategoryImgs', getCategoryArray(cateImgs));
-    store.commit('home/setRankings', addColor(rankImgs));
+    store.commit('home/setHomeSections', sections);
+
+    // let [ banners, dailyData, newImgs, cateImgs, rankImgs ] = await Promise.all([
+    //   app.$axios.get('/mainBanner').then( res => res.status === 200 ? res.data.banners : [] ),
+    //   app.$axios.get('/dailyImgs').then( res => res.status === 200 ? res.data : {} ),
+    //   app.$axios.get('/latest').then( res => res.status === 200 ? res.data : {} ),
+    //   app.$axios.get('/categoryImgs').then( res => res.status === 200 ? res.data : {} ),
+    //   app.$axios.get('/rank').then( res => res.status === 200 ? res.data : {} )
+    // ]);
+
+    // store.commit('home/setMainBanners', banners);
+    // store.commit('home/setDailyImgs', getDailyContentArray(dailyData));
+    // store.commit('home/setNewImgs', getNewContentArray(newImgs));
+    // store.commit('home/setCategoryImgs', getCategoryArray(cateImgs));
+    // store.commit('home/setRankings', addColor(rankImgs));
 
 
 
@@ -115,7 +85,7 @@ export default {
     // if (status2 === 200) {
     //   store.commit('home/setDailyImgs', getDailyContentArray(dailyData));
     // }
-    
+
     // //***get latest content */
     // const { status:status3, data:newImgs } = await app.$axios.get('/latest');
     // if (status3 === 200) {
@@ -139,4 +109,14 @@ export default {
 
 <style lang="scss">
 @import '../assets/css/base.scss';
+
+.index {
+  &-section-wrapper {
+    /* background: pink; */
+    max-width: 11.25rem;
+    margin: 0 auto;
+    padding: .6rem 0;
+    transform: translateX(-.075rem);
+  }
+}
 </style>
