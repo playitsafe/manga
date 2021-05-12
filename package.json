@@ -18,7 +18,7 @@
     "bootstrap-vue": "^2.15.0",
     "lodash": "^4.17.20",
     "nuxt": "^2.13.0",
-    "swiper": "^5.4.0",
+    "swiper": "^6.5.1",
     "vue-awesome-swiper": "^4.1.1",
     "vuelidate": "^0.7.5"
   },
